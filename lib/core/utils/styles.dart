@@ -10,4 +10,7 @@ class Styles {
     fontSize: 20,
     color: Colors.white,
   );
+  static const textStyle14 = TextStyle(
+    fontSize: 14,
+  );
 }

@@ -3,6 +3,7 @@ import 'package:nectar_app/constants.dart';
 import 'package:nectar_app/core/utils/app_images.dart';
 import 'package:nectar_app/core/utils/styles.dart';
 import 'package:nectar_app/core/widgets/custom_button.dart';
+import 'package:nectar_app/features/login/presentation/views/login_view.dart';
 
 class OnBoardingViewBody extends StatelessWidget {
   const OnBoardingViewBody({super.key});
@@ -40,7 +41,9 @@ class OnBoardingViewBody extends StatelessWidget {
           ),
           CustomButton(
             descriptionButtonTxt: 'Get Started',
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, LoginView.id);
+            },
           ),
         ],
       ),
