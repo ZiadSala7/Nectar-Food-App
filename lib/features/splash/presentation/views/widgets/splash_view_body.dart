@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nectar_app/constants.dart';
 import 'package:nectar_app/core/utils/app_images.dart';
-import 'package:nectar_app/features/home/presentation/views/home_view.dart';
+import 'package:nectar_app/features/on%20boarding/presentation/views/onboarding_view.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -58,7 +58,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
       Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-            builder: (context) => const HomeView(),
+            builder: (context) => const OnBoardingView(),
           ));
     });
   }
