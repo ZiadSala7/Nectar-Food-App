@@ -6,11 +6,9 @@ class LoginViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(10),
-      height: MediaQuery.of(context).size.height,
-      width: MediaQuery.of(context).size.width,
-      child: const LoginBodyItems(),
+    return const Padding(
+      padding: EdgeInsets.all(10),
+      child: LoginBodyItems(),
     );
   }
 }

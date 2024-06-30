@@ -20,11 +20,8 @@ class OnBoardingViewBody extends StatelessWidget {
         ),
       ),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          SizedBox(
-            height: MediaQuery.of(context).size.height * 0.4,
-          ),
           Image.asset(AppImages.whiteCarrot),
           const SizedBox(
             height: 20,
@@ -44,6 +41,9 @@ class OnBoardingViewBody extends StatelessWidget {
             onPressed: () {
               Navigator.pushNamed(context, LoginView.id);
             },
+          ),
+          SizedBox(
+            height: MediaQuery.of(context).size.height * 0.1,
           ),
         ],
       ),
