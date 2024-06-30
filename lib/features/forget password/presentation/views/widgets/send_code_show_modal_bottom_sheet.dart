@@ -3,7 +3,7 @@ import 'package:nectar_app/core/widgets/custom_button.dart';
 import 'package:nectar_app/features/forget%20password/presentation/views/widgets/custom_show_modal_texts.dart';
 import 'package:nectar_app/features/forget%20password/presentation/views/widgets/row_verification_text_field.dart';
 
-Future<dynamic> showModalButtomSheetMethod(BuildContext context) {
+Future<dynamic> sendCodeShowModalButtomSheetMethod(BuildContext context) {
   return showModalBottomSheet(
       context: context,
       builder: (BuildContext context) {

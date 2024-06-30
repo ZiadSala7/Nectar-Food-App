@@ -4,7 +4,7 @@ import 'package:nectar_app/core/widgets/custom_button.dart';
 import 'package:nectar_app/core/widgets/custom_text_field.dart';
 import 'package:nectar_app/features/forget%20password/presentation/views/widgets/custom_appbar.dart';
 import 'package:nectar_app/features/forget%20password/presentation/views/widgets/decoration_image_method.dart';
-import 'package:nectar_app/features/forget%20password/presentation/views/widgets/show_modal_bottom_sheet.dart';
+import 'package:nectar_app/features/forget%20password/presentation/views/widgets/reset_password_bottom_sheet.dart';
 import 'package:nectar_app/features/forget%20password/presentation/views/widgets/text_section_forget_password.dart';
 
 class ForgetPasswordViewBody extends StatelessWidget {
@@ -43,7 +43,7 @@ class ForgetPasswordViewBody extends StatelessWidget {
                 CustomButton(
                   descriptionButtonTxt: 'Continue',
                   onPressed: () {
-                    showModalButtomSheetMethod(context);
+                    resetPasswordShowModalButtomSheetMethod(context);
                   },
                 ),
               ],
