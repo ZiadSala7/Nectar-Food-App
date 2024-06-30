@@ -4,13 +4,17 @@ import 'package:nectar_app/core/utils/styles.dart';
 class TextButtonLogin extends StatelessWidget {
   final Color color;
   final String descriptionTxt;
+  final Function() onPressed;
   const TextButtonLogin(
-      {super.key, required this.color, required this.descriptionTxt});
+      {super.key,
+      required this.color,
+      required this.descriptionTxt,
+      required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      onPressed: () {},
+      onPressed: onPressed,
       child: Text(
         descriptionTxt,
         style: Styles.textStyle14.copyWith(

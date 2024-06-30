@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nectar_app/constants.dart';
 
 class CustomPasswordTextField extends StatefulWidget {
   const CustomPasswordTextField({super.key});
@@ -16,7 +17,11 @@ class _CustomPasswordTextFieldState extends State<CustomPasswordTextField> {
     return TextField(
       obscureText: isSecure,
       decoration: InputDecoration(
+        focusColor: Colors.white,
         border: const UnderlineInputBorder(),
+        focusedBorder: const UnderlineInputBorder(
+          borderSide: BorderSide(color: commonColor),
+        ),
         suffixIcon: IconButton(
           onPressed: () {
             setState(() {

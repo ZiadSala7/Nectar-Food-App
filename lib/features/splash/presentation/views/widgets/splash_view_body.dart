@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:nectar_app/constants.dart';
 import 'package:nectar_app/core/utils/app_images.dart';
-import 'package:nectar_app/features/on%20boarding/presentation/views/onboarding_view.dart';
+import 'package:nectar_app/core/utils/app_routers.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -55,11 +56,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
   void homeNavidation() {
     Future.delayed(kTransitionDuration, () {
-      Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const OnBoardingView(),
-          ));
+      GoRouter.of(context).push(AppRouters.onBoardingView);
     });
   }
 }
