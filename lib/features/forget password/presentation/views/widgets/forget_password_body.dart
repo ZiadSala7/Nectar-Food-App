@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:nectar_app/core/utils/app_images.dart';
-import 'package:nectar_app/core/utils/styles.dart';
 import 'package:nectar_app/core/widgets/custom_button.dart';
 import 'package:nectar_app/core/widgets/custom_text_field.dart';
 import 'package:nectar_app/features/forget%20password/presentation/views/widgets/custom_appbar.dart';
+import 'package:nectar_app/features/forget%20password/presentation/views/widgets/decoration_image_method.dart';
+import 'package:nectar_app/features/forget%20password/presentation/views/widgets/show_modal_bottom_sheet.dart';
 import 'package:nectar_app/features/forget%20password/presentation/views/widgets/text_section_forget_password.dart';
 
 class ForgetPasswordViewBody extends StatelessWidget {
@@ -13,11 +14,8 @@ class ForgetPasswordViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(20),
-      decoration: const BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage(AppImages.backgroundImg),
-          fit: BoxFit.fill,
-        ),
+      decoration: BoxDecoration(
+        image: decorationImageMethod(),
       ),
       child: CustomScrollView(
         slivers: [
@@ -38,23 +36,15 @@ class ForgetPasswordViewBody extends StatelessWidget {
                   height: 50,
                 ),
                 const TextSectionForgetPasswordView(),
-                const SizedBox(
-                  height: 50,
-                ),
-                Text(
-                  'Email',
-                  style: Styles.textStyle20.copyWith(
-                    color: const Color.fromARGB(255, 117, 116, 116),
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
                 const CustomTextField(),
                 const SizedBox(
                   height: 50,
                 ),
                 CustomButton(
                   descriptionButtonTxt: 'Continue',
-                  onPressed: () {},
+                  onPressed: () {
+                    showModalButtomSheetMethod(context);
+                  },
                 ),
               ],
             ),
