@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nectar_app/core/utils/app_images.dart';
+import 'package:nectar_app/core/widgets/custom_orange_carrot_img.dart';
 import 'package:nectar_app/features/login/presentation/views/widgets/buttons_section.dart';
 import 'package:nectar_app/features/login/presentation/views/widgets/text_field_section.dart';
 import 'package:nectar_app/features/login/presentation/views/widgets/text_section.dart';
@@ -20,25 +21,21 @@ class LoginBodyItems extends StatelessWidget {
           fit: BoxFit.fitWidth,
         ),
       ),
-      child: SingleChildScrollView(
+      child: const SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
+            CustomOrangeCarrotImg(),
+            TextSection(),
             SizedBox(
-              height: MediaQuery.of(context).size.height * 0.25,
-              width: double.infinity,
-              child: Image.asset(AppImages.orangeCarrot),
-            ),
-            const TextSection(),
-            const SizedBox(
               height: 40,
             ),
             //TextField Data
-            const TextFieldSection(),
-            const SizedBox(
+            TextFieldSection(),
+            SizedBox(
               height: 15,
             ),
-            const ButtonsSection(),
+            ButtonsSection(),
           ],
         ),
       ),

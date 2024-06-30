@@ -38,7 +38,9 @@ class ButtonsSection extends StatelessWidget {
             TextButtonLogin(
               color: commonColor,
               descriptionTxt: 'Sign up',
-              onPressed: () {},
+              onPressed: () {
+                GoRouter.of(context).push(AppRouters.signUpView);
+              },
             ),
           ],
         ),

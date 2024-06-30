@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nectar_app/core/utils/app_images.dart';
 import 'package:nectar_app/core/widgets/custom_button.dart';
+import 'package:nectar_app/core/widgets/custom_orange_carrot_img.dart';
 import 'package:nectar_app/core/widgets/custom_text_field.dart';
 import 'package:nectar_app/features/forget%20password/presentation/views/widgets/custom_appbar.dart';
 import 'package:nectar_app/features/forget%20password/presentation/views/widgets/decoration_image_method.dart';
@@ -26,14 +27,9 @@ class ForgetPasswordViewBody extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Center(
-                  child: Image.asset(
-                    AppImages.orangeCarrot,
-                    height: MediaQuery.of(context).size.height * .15,
-                  ),
-                ),
+                const CustomOrangeCarrotImg(),
                 const SizedBox(
-                  height: 50,
+                  height: 15,
                 ),
                 const TextSectionForgetPasswordView(),
                 const CustomTextField(),
