@@ -10,9 +10,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      debugShowCheckedModeBanner: false,
-      routerConfig: AppRouters.router,
+    return SafeArea(
+      child: MaterialApp.router(
+        debugShowCheckedModeBanner: false,
+        routerConfig: AppRouters.router,
+      ),
     );
   }
 }
