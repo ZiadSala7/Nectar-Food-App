@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:nectar_app/core/utils/app_images.dart';
 import 'package:nectar_app/core/widgets/custom_button.dart';
 import 'package:nectar_app/core/widgets/custom_orange_carrot_img.dart';
 import 'package:nectar_app/core/widgets/custom_text_field.dart';
@@ -32,7 +31,7 @@ class ForgetPasswordViewBody extends StatelessWidget {
                   height: 15,
                 ),
                 const TextSectionForgetPasswordView(),
-                const CustomTextField(),
+                CustomTextField(),
                 const SizedBox(
                   height: 50,
                 ),

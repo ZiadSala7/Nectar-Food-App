@@ -7,7 +7,7 @@ class CustomOrangeCarrotImg extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.25,
+      height: MediaQuery.of(context).size.height * 0.21,
       width: double.infinity,
       child: Image.asset(AppImages.orangeCarrot),
     );

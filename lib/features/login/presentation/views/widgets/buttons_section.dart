@@ -3,7 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:nectar_app/constants.dart';
 import 'package:nectar_app/core/utils/app_routers.dart';
 import 'package:nectar_app/core/widgets/custom_button.dart';
-import 'package:nectar_app/features/login/presentation/views/widgets/text_button.dart';
+import 'package:nectar_app/core/widgets/text_button.dart';
 
 class ButtonsSection extends StatelessWidget {
   const ButtonsSection({super.key});
