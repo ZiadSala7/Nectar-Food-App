@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:nectar_app/core/utils/app_routers.dart';
 import 'package:nectar_app/core/widgets/custom_button.dart';
 import 'package:nectar_app/features/forget%20password/presentation/views/widgets/text_field_reset_password_section.dart';
 import 'package:nectar_app/features/forget%20password/presentation/views/widgets/text_section_reset_password.dart';
@@ -43,7 +45,10 @@ Future<dynamic> resetPasswordShowModalButtomSheetMethod(BuildContext context) {
                     ),
                     CustomButton(
                       descriptionButtonTxt: 'Reset Password',
-                      onPressed: () {},
+                      onPressed: () {
+                        GoRouter.of(context)
+                            .push(AppRouters.resetPasswordAcceptedView);
+                      },
                     ),
                   ],
                 ),
