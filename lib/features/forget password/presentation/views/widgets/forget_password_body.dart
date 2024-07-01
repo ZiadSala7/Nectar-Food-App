@@ -4,7 +4,7 @@ import 'package:nectar_app/core/widgets/custom_button.dart';
 import 'package:nectar_app/core/widgets/custom_orange_carrot_img.dart';
 import 'package:nectar_app/core/widgets/custom_text_field.dart';
 import 'package:nectar_app/features/forget%20password/presentation/views/widgets/custom_appbar.dart';
-import 'package:nectar_app/features/forget%20password/presentation/views/widgets/reset_password_bottom_sheet.dart';
+import 'package:nectar_app/features/forget%20password/presentation/views/widgets/send_code_show_modal_bottom_sheet.dart';
 import 'package:nectar_app/features/forget%20password/presentation/views/widgets/text_section_forget_password.dart';
 
 class ForgetPasswordViewBody extends StatelessWidget {
@@ -39,7 +39,7 @@ class ForgetPasswordViewBody extends StatelessWidget {
                 showBottomSheet(
                     context: context,
                     builder: (context) {
-                      return const ResetPasswordBottomSheet();
+                      return const SendCodeShowModalBottomSheet();
                     });
               },
             ),

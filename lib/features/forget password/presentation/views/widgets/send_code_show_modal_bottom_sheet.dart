@@ -33,7 +33,11 @@ class SendCodeShowModalBottomSheet extends StatelessWidget {
                 descriptionButtonTxt: 'Send code',
                 onPressed: () {
                   GoRouter.of(context).pop();
-                  const ResetPasswordBottomSheet();
+                  showBottomSheet(
+                      context: context,
+                      builder: (context) {
+                        return const ResetPasswordBottomSheet();
+                      });
                 },
               ),
             ],
