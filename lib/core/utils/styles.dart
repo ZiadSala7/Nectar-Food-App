@@ -7,6 +7,11 @@ class Styles {
     color: greyColor,
     fontWeight: FontWeight.w600,
   );
+  static const textStyle15 = TextStyle(
+    fontSize: 15,
+    color: greyColor,
+    fontWeight: FontWeight.normal,
+  );
   static const textStyle16 = TextStyle(
     fontSize: 16,
   );

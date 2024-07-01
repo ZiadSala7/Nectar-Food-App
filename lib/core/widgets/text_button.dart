@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nectar_app/constants.dart';
 import 'package:nectar_app/core/utils/styles.dart';
 
 class TextButtonLogin extends StatelessWidget {
@@ -14,11 +15,17 @@ class TextButtonLogin extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(
+      style: TextButton.styleFrom(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+        ),
+      ),
       onPressed: onPressed,
       child: Text(
         descriptionTxt,
+        textAlign: TextAlign.start,
         style: Styles.textStyle16.copyWith(
-          color: color,
+          color: commonColor,
         ),
       ),
     );

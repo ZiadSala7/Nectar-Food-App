@@ -9,19 +9,15 @@ class SignUpTextsSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          'Sign Up',
-          textAlign: TextAlign.start,
-          style: Styles.textStyle20.copyWith(
-            color: Colors.black,
-            fontSize: 30,
-            fontWeight: FontWeight.w500,
-          ),
-        ),
         const Text(
+          'Sign Up',
+          style: Styles.textStyle30,
+        ),
+        Text(
           'Enter your credentials to continue',
-          textAlign: TextAlign.start,
-          style: Styles.textStyle14,
+          style: Styles.textStyle14.copyWith(
+            fontWeight: FontWeight.normal,
+          ),
         ),
       ],
     );

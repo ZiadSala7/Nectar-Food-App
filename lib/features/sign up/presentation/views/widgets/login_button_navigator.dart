@@ -17,8 +17,9 @@ class LoginButtonNavigator extends StatelessWidget {
       children: [
         Text(
           'Already have an account?',
-          style: Styles.textStyle16.copyWith(
-            fontWeight: FontWeight.bold,
+          style: Styles.textStyle18.copyWith(
+            color: Colors.black,
+            fontWeight: FontWeight.w400,
           ),
         ),
         TextButtonLogin(
