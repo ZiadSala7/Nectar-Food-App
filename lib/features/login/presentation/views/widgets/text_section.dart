@@ -6,21 +6,15 @@ class TextSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           'Login',
-          textAlign: TextAlign.start,
-          style: Styles.textStyle20.copyWith(
-            color: Colors.black,
-            fontSize: 30,
-            fontWeight: FontWeight.w500,
-          ),
+          style: Styles.textStyle30,
         ),
-        const Text(
+        Text(
           'Enter your emails and password',
-          textAlign: TextAlign.start,
           style: Styles.textStyle14,
         ),
       ],

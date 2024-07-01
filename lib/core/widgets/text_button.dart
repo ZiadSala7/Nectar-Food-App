@@ -17,7 +17,7 @@ class TextButtonLogin extends StatelessWidget {
       onPressed: onPressed,
       child: Text(
         descriptionTxt,
-        style: Styles.textStyle14.copyWith(
+        style: Styles.textStyle16.copyWith(
           color: color,
         ),
       ),

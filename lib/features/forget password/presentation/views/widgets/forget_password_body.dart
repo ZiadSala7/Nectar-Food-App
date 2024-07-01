@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:nectar_app/core/widgets/custom_background_box_decoration_img.dart';
 import 'package:nectar_app/core/widgets/custom_button.dart';
 import 'package:nectar_app/core/widgets/custom_orange_carrot_img.dart';
 import 'package:nectar_app/core/widgets/custom_text_field.dart';
 import 'package:nectar_app/features/forget%20password/presentation/views/widgets/custom_appbar.dart';
-import 'package:nectar_app/features/forget%20password/presentation/views/widgets/decoration_image_method.dart';
 import 'package:nectar_app/features/forget%20password/presentation/views/widgets/reset_password_bottom_sheet.dart';
 import 'package:nectar_app/features/forget%20password/presentation/views/widgets/text_section_forget_password.dart';
 
@@ -12,39 +12,39 @@ class ForgetPasswordViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(20),
-      decoration: BoxDecoration(
-        image: decorationImageMethod(),
-      ),
-      child: CustomScrollView(
-        slivers: [
-          const SliverToBoxAdapter(
-            child: CustomAppBar(),
-          ),
-          SliverToBoxAdapter(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const CustomOrangeCarrotImg(),
-                const SizedBox(
-                  height: 15,
-                ),
-                const TextSectionForgetPasswordView(),
-                CustomTextField(),
-                const SizedBox(
-                  height: 50,
-                ),
-                CustomButton(
-                  descriptionButtonTxt: 'Continue',
-                  onPressed: () {
-                    resetPasswordShowModalButtomSheetMethod(context);
-                  },
-                ),
-              ],
+    return SingleChildScrollView(
+      child: Container(
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+        padding: const EdgeInsets.all(20),
+        decoration: backgroundBoxDecorationImg(),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            const CustomAppBar(),
+            const CustomOrangeCarrotImg(
+              mediaSize: .15,
             ),
-          ),
-        ],
+            const SizedBox(
+              height: 15,
+            ),
+            const TextSectionForgetPasswordView(),
+            CustomTextField(),
+            const SizedBox(
+              height: 50,
+            ),
+            CustomButton(
+              descriptionButtonTxt: 'Continue',
+              onPressed: () {
+                showBottomSheet(
+                    context: context,
+                    builder: (context) {
+                      return const ResetPasswordBottomSheet();
+                    });
+              },
+            ),
+          ],
+        ),
       ),
     );
   }

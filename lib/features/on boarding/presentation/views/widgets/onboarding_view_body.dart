@@ -32,6 +32,7 @@ class OnBoardingViewBody extends StatelessWidget {
             textAlign: TextAlign.center,
             style: Styles.textStyle50.copyWith(
               fontFamily: playwriteNGModern,
+              color: Colors.white,
             ),
           ),
           const SizedBox(

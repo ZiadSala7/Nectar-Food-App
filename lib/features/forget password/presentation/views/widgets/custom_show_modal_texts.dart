@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nectar_app/constants.dart';
 import 'package:nectar_app/core/utils/styles.dart';
 
 class CustomShowModalBottomSheetTexts extends StatelessWidget {
@@ -9,13 +10,9 @@ class CustomShowModalBottomSheetTexts extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
+        const Text(
           'Reset Password',
-          style: Styles.textStyle50.copyWith(
-            fontSize: 30,
-            fontWeight: FontWeight.w500,
-            color: Colors.black,
-          ),
+          style: Styles.textStyle30,
         ),
         const SizedBox(
           height: 20,
@@ -23,19 +20,15 @@ class CustomShowModalBottomSheetTexts extends StatelessWidget {
         Text(
           'Enter the code that was sent to your email \naddress ',
           style: Styles.textStyle16.copyWith(
-            color: const Color.fromARGB(255, 117, 116, 116),
-            fontWeight: FontWeight.w500,
+            color: greyColor,
           ),
         ),
         const SizedBox(
-          height: 30,
+          height: 40,
         ),
-        Text(
+        const Text(
           'Enter the 5 digits code',
-          style: Styles.textStyle20.copyWith(
-            color: const Color.fromARGB(255, 117, 116, 116),
-            fontWeight: FontWeight.bold,
-          ),
+          style: Styles.textStyle20,
         ),
         const SizedBox(
           height: 40,

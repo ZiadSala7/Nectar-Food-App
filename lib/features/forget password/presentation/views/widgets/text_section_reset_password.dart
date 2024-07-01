@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nectar_app/constants.dart';
 import 'package:nectar_app/core/utils/styles.dart';
 
 class TextSectionResetPassword extends StatelessWidget {
@@ -9,12 +10,9 @@ class TextSectionResetPassword extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
+        const Text(
           'Reset Password',
-          style: Styles.textStyle50.copyWith(
-            color: Colors.black,
-            fontSize: 25,
-          ),
+          style: Styles.textStyle30,
         ),
         const SizedBox(
           height: 30,
@@ -22,8 +20,7 @@ class TextSectionResetPassword extends StatelessWidget {
         Text(
           'Enter new password for your account to reset \npassword',
           style: Styles.textStyle16.copyWith(
-            color: const Color.fromARGB(255, 117, 116, 116),
-            fontWeight: FontWeight.w500,
+            color: greyColor,
           ),
         ),
         const SizedBox(
