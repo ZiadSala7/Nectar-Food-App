@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:nectar_app/constants.dart';
 import 'package:nectar_app/core/utils/app_images.dart';
 import 'package:nectar_app/core/utils/app_routers.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -55,8 +56,12 @@ class _SplashViewBodyState extends State<SplashViewBody>
   }
 
   void homeNavidation() {
-    Future.delayed(kTransitionDuration, () {
-      GoRouter.of(context).push(AppRouters.onBoardingView);
+    Future.delayed(kTransitionDuration, () async {
+      final prefs = await SharedPreferences.getInstance();
+      final onboarding = prefs.getBool('onboarding');
+      onboarding == false
+          ? GoRouter.of(context).push(AppRouters.onBoardingView)
+          : GoRouter.of(context).push(AppRouters.loginView);
     });
   }
 }

@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:nectar_app/core/utils/app_routers.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  // ignore: invalid_use_of_visible_for_testing_member
+  SharedPreferences.setMockInitialValues({});
+  final pref = await SharedPreferences.getInstance();
+  pref.getBool('onboarding') ?? false;
   runApp(const MyApp());
 }
 

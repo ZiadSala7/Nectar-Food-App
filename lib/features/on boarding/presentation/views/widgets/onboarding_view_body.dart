@@ -5,6 +5,7 @@ import 'package:nectar_app/core/utils/app_images.dart';
 import 'package:nectar_app/core/utils/app_routers.dart';
 import 'package:nectar_app/core/utils/styles.dart';
 import 'package:nectar_app/core/widgets/custom_button.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class OnBoardingViewBody extends StatelessWidget {
   const OnBoardingViewBody({super.key});
@@ -40,7 +41,9 @@ class OnBoardingViewBody extends StatelessWidget {
           ),
           CustomButton(
             descriptionButtonTxt: 'Get Started',
-            onPressed: () {
+            onPressed: () async {
+              final prefs = await SharedPreferences.getInstance();
+              prefs.setBool('onboarding', true);
               GoRouter.of(context).push(AppRouters.loginView);
             },
           ),
