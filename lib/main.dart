@@ -4,8 +4,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // ignore: invalid_use_of_visible_for_testing_member
-  SharedPreferences.setMockInitialValues({});
   final pref = await SharedPreferences.getInstance();
   pref.getBool('onboarding') ?? false;
   runApp(const MyApp());
