@@ -13,4 +13,9 @@ class AppImages {
   static const String vegetables = 'assets/images/vegetables.png';
   static const String freshVegeTitle = 'assets/images/freshVegeTitle.png';
   static const String khass = 'assets/images/khass.png';
+  static const String apple = 'assets/images/apple.png';
+  static const String pulses = 'assets/images/pulses.png';
+  static const String ric = 'assets/images/ric.png';
+  static const String beef = 'assets/images/beef.png';
+  static const String chicken = 'assets/images/chicken.png';
 }

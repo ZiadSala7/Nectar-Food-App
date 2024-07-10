@@ -23,18 +23,6 @@ class CustomAutomaticScrollingList extends StatefulWidget {
 
 class _CustomAutomaticScrollingListState
     extends State<CustomAutomaticScrollingList> {
-  void startTimer() {
-    timer = Timer.periodic(const Duration(seconds: 3), (timer) {
-      widget.pageController.page == 2
-          ? widget.pageController.animateTo(0,
-              duration: const Duration(milliseconds: 500),
-              curve: Curves.easeInOut)
-          : widget.pageController.nextPage(
-              duration: const Duration(milliseconds: 500),
-              curve: Curves.easeInOut);
-    });
-  }
-
   @override
   void initState() {
     super.initState();
@@ -69,5 +57,17 @@ class _CustomAutomaticScrollingListState
         ),
       ],
     );
+  }
+
+  void startTimer() {
+    timer = Timer.periodic(const Duration(seconds: 3), (timer) {
+      widget.pageController.page == 2
+          ? widget.pageController.animateTo(0,
+              duration: const Duration(milliseconds: 500),
+              curve: Curves.easeInOut)
+          : widget.pageController.nextPage(
+              duration: const Duration(milliseconds: 500),
+              curve: Curves.easeInOut);
+    });
   }
 }
