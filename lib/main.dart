@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:nectar_app/core/utils/app_routers.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+int selectedIndx = 0;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  final pref = await SharedPreferences.getInstance();
-  pref.getBool('onboarding') ?? false;
+  await SharedPreferences.getInstance();
   runApp(const MyApp());
 }
 
