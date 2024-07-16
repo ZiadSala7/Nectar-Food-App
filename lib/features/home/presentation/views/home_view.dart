@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nectar_app/core/utils/app_images.dart';
-import 'package:nectar_app/features/home/presentation/views/home_view_search_field.dart';
+import 'package:nectar_app/features/home/presentation/views/widgets/home_view_search_field.dart';
 import 'package:nectar_app/features/home/presentation/views/widgets/home_view_body.dart';
 
 class HomeView extends StatefulWidget {
