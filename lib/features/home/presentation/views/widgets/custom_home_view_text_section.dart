@@ -4,35 +4,37 @@ import 'package:nectar_app/core/utils/styles.dart';
 
 class CustomHomeViewTextSection extends StatelessWidget {
   final String firstTxt;
-  final String secondTxt;
+  final Function() onTap;
   const CustomHomeViewTextSection({
     super.key,
     required this.firstTxt,
-    required this.secondTxt,
+    required this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
-    return SliverToBoxAdapter(
-      child: Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(
-              firstTxt,
-              style: Styles.textStyle30,
+    return Padding(
+      padding: const EdgeInsets.all(10.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
+            firstTxt,
+            style: Styles.textStyle25.copyWith(
+              fontFamily: alef,
             ),
-            GestureDetector(
-              child: Text(
-                secondTxt,
-                style: Styles.textStyle20.copyWith(
-                  color: commonColor,
-                ),
+          ),
+          GestureDetector(
+            onTap: onTap,
+            child: Text(
+              'See all',
+              style: Styles.textStyle20.copyWith(
+                color: commonColor,
+                fontFamily: alef,
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

@@ -2,70 +2,62 @@ import 'package:flutter/material.dart';
 import 'package:nectar_app/constants.dart';
 import 'package:nectar_app/core/utils/app_images.dart';
 import 'package:nectar_app/core/utils/styles.dart';
-import 'package:nectar_app/core/widgets/custom_iadded_item_button.dart';
+import 'package:nectar_app/core/widgets/custom_button_add_item.dart';
 
 class CustomCardItem extends StatelessWidget {
-  final double height;
-  const CustomCardItem({super.key, required this.height});
+  const CustomCardItem({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 6),
-      margin: const EdgeInsets.symmetric(horizontal: 10),
-      height: height * 0.28,
-      width: MediaQuery.of(context).size.width / 2.33,
+      padding: const EdgeInsets.symmetric(horizontal: 15),
+      margin: const EdgeInsets.only(right: 15),
+      width: 175,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(15),
+        borderRadius: BorderRadius.circular(20),
         border: Border.all(
-          color: greyColor,
-          width: 0.39,
+          style: BorderStyle.solid,
+          width: 2,
+          color: cardBorder,
         ),
       ),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const SizedBox(
-            height: 5,
-          ),
           Center(
             child: Image.asset(
-              AppImages.banana,
+              AppImages.apple,
+              height: 100,
               width: 100,
             ),
           ),
-          const SizedBox(
-            height: 20,
+          const Text(
+            'Red Apple',
+            style: Styles.textStyle25,
           ),
           Text(
-            'Organic banana',
-            style: Styles.textStyle20.copyWith(
-              color: Colors.black,
-              fontWeight: FontWeight.w600,
+            '1Kg, priced',
+            style: Styles.textStyle16.copyWith(
+              color: greyColor,
             ),
           ),
-          const Text(
-            '1k, Priceg',
-            style: Styles.textStyle18,
+          const SizedBox(
+            height: 30,
           ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  r'$4.99',
-                  style: Styles.textStyle14.copyWith(
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: playwriteNGModern,
-                  ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                r'$4.99',
+                style: Styles.textStyle20.copyWith(
+                  color: Colors.black,
                 ),
-                const CustomItemAddButton(),
-              ],
-            ),
+              ),
+              const CustomButtonAddItem()
+            ],
           ),
         ],
       ),

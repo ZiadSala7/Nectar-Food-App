@@ -13,6 +13,9 @@ class TextSection extends StatelessWidget {
           'Login',
           style: Styles.textStyle30,
         ),
+        SizedBox(
+          height: 15,
+        ),
         Text(
           'Enter your emails and password',
           style: Styles.textStyle14,

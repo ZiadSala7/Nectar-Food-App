@@ -18,8 +18,8 @@ class CustomGroceryItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(10),
-      width: MediaQuery.of(context).size.width / 1.4,
-      height: 120,
+      margin: const EdgeInsets.only(right: 15),
+      width: 250,
       decoration: BoxDecoration(
         color: const Color(0xffFEF1E4),
         borderRadius: BorderRadius.circular(15),
@@ -29,14 +29,17 @@ class CustomGroceryItem extends StatelessWidget {
         children: [
           Image.asset(
             AppImages.pulses,
-            width: 100,
+            width: 75,
+            height: 75,
           ),
           const SizedBox(
             width: 15,
           ),
-          const Text(
+          Text(
             'Pulses',
-            style: Styles.textStyle30,
+            style: Styles.textStyle20.copyWith(
+              color: Colors.black,
+            ),
           )
         ],
       ),

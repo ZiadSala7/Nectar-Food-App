@@ -65,5 +65,8 @@ flutter:
     - family: PlaywriteNGModern
       fonts:
         - asset: assets/fonts/PlaywriteNGModern-Regular.ttf
+    - family: Alef
+      fonts:
+        - asset: assets/fonts/Alef-Bold.ttf
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
