@@ -18,4 +18,6 @@ class AppImages {
   static const String ric = 'assets/images/ric.png';
   static const String beef = 'assets/images/beef.png';
   static const String chicken = 'assets/images/chicken.png';
+  static const String backgroundProduct =
+      'assets/images/backgroundProductImg.png';
 }
