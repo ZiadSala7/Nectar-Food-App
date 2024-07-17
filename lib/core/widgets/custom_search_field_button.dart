@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:nectar_app/constants.dart';
+import 'package:nectar_app/core/utils/app_routers.dart';
 import 'package:nectar_app/core/utils/styles.dart';
 
 class CustomSearchFieldButton extends StatelessWidget {
@@ -10,6 +12,9 @@ class CustomSearchFieldButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      onTap: () {
+        GoRouter.of(context).push(AppRouters.searchView);
+      },
       child: Container(
         margin: const EdgeInsets.symmetric(vertical: 20),
         padding: const EdgeInsets.symmetric(horizontal: 10),
