@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:nectar_app/core/utils/app_routers.dart';
 import 'package:nectar_app/core/utils/styles.dart';
 
 class KindOfProductCard extends StatelessWidget {
@@ -17,7 +19,9 @@ class KindOfProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        GoRouter.of(context).push(AppRouters.dislayProducts);
+      },
       child: Container(
         height: 180,
         width: 180,
