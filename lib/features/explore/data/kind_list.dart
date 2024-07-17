@@ -10,7 +10,7 @@ List<Map<String, dynamic>> kinds = [
     'color2': commonColor,
   },
   {
-    'name': 'Cooking Oil& Ghee',
+    'name': 'Cooking Oil&\n Ghee',
     'img': AppImages.oil,
     'color': const Color(0xffFBEDCF),
     'color2': const Color(0xffFABD7C),
