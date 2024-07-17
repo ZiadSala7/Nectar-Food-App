@@ -1,27 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:nectar_app/features/explore/data/kind_list.dart';
-import 'package:nectar_app/features/explore/presentation/views/widgets/kind_of_product_card.dart';
+import 'package:nectar_app/core/widgets/custom_search_field_button.dart';
+import 'package:nectar_app/features/explore/presentation/views/widgets/explore_view_body_grid_view.dart';
 
 class ExploreViewBody extends StatelessWidget {
   const ExploreViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return GridView.builder(
-        itemCount: kinds.length,
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          crossAxisSpacing: 15,
-          mainAxisSpacing: 15,
-          childAspectRatio: 2 / 2.1,
-        ),
-        itemBuilder: (context, index) {
-          return KindOfProductCard(
-            kindName: kinds[index]['name'],
-            img: kinds[index]['img'],
-            color: kinds[index]['color'],
-            borderColor: kinds[index]['color2'],
-          );
-        });
+    return const Padding(
+      padding: EdgeInsets.symmetric(horizontal: 10),
+      child: Column(
+        children: [
+          CustomSearchFieldButton(),
+          Expanded(
+            child: ExploreViewBodyGridView(),
+          ),
+        ],
+      ),
+    );
   }
 }
