@@ -31,7 +31,7 @@ class ButtonsSection extends StatelessWidget {
         CustomButton(
           descriptionButtonTxt: 'Log in',
           onPressed: () {
-            GoRouter.of(context).push(AppRouters.homeView);
+            GoRouter.of(context).push(AppRouters.exploreView);
           },
         ),
         Row(
@@ -45,7 +45,7 @@ class ButtonsSection extends StatelessWidget {
               color: commonColor,
               descriptionTxt: 'Sign up',
               onPressed: () {
-                GoRouter.of(context).push(AppRouters.signUpView);
+                GoRouter.of(context).push(AppRouters.exploreView);
               },
             ),
           ],

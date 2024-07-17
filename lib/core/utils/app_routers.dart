@@ -1,4 +1,5 @@
 import 'package:go_router/go_router.dart';
+import 'package:nectar_app/features/explore/presentation/views/explore_view.dart';
 import 'package:nectar_app/features/forget%20password/presentation/views/forget_password_view.dart';
 import 'package:nectar_app/features/home/presentation/views/home_view.dart';
 import 'package:nectar_app/features/home/presentation/views/product_details_view.dart';
@@ -16,6 +17,7 @@ abstract class AppRouters {
   static const String resetPasswordAcceptedView = '/resetPasswordAcceptedView';
   static const String homeView = '/homeView';
   static const String detailsView = '/detailsView';
+  static const String exploreView = '/exploreView';
   static final router = GoRouter(
     routes: [
       GoRoute(
@@ -49,6 +51,10 @@ abstract class AppRouters {
       GoRoute(
         path: detailsView,
         builder: (context, state) => const ProductDetailsView(),
+      ),
+      GoRoute(
+        path: exploreView,
+        builder: (context, state) => const ExploreView(),
       ),
     ],
   );

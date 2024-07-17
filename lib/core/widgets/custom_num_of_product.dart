@@ -45,7 +45,9 @@ class _CustomNumOfProductState extends State<CustomNumOfProduct> {
               child: Center(
                 child: Text(
                   cnt.toString(),
-                  style: Styles.textStyle20,
+                  style: Styles.textStyle20.copyWith(
+                    color: Colors.black,
+                  ),
                 ),
               ),
             ),

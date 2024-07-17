@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nectar_app/core/utils/app_images.dart';
-import 'package:nectar_app/features/home/presentation/views/widgets/home_view_search_field.dart';
+import 'package:nectar_app/core/widgets/custom_search_field_button.dart';
 import 'package:nectar_app/features/home/presentation/views/widgets/home_view_body.dart';
 
 class HomeView extends StatefulWidget {
@@ -34,7 +34,7 @@ class _HomeViewState extends State<HomeView> {
           padding: EdgeInsets.all(10),
           child: Column(
             children: [
-              HomeViewSearchField(),
+              CustomSearchFieldButton(),
               Expanded(
                 child: HomeViewBody(),
               ),

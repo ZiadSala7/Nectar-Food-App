@@ -13,7 +13,7 @@ class NutritionsWidget extends StatelessWidget {
       height: 25,
       width: 60,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(15),
+        borderRadius: BorderRadius.circular(5),
         color: cardBorder,
       ),
       child: const Text(

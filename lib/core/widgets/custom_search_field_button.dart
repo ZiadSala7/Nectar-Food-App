@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:nectar_app/constants.dart';
 import 'package:nectar_app/core/utils/styles.dart';
 
-class HomeViewSearchField extends StatelessWidget {
-  const HomeViewSearchField({
+class CustomSearchFieldButton extends StatelessWidget {
+  const CustomSearchFieldButton({
     super.key,
   });
 
@@ -12,7 +12,7 @@ class HomeViewSearchField extends StatelessWidget {
     return GestureDetector(
       child: Container(
         margin: const EdgeInsets.symmetric(vertical: 20),
-        padding: const EdgeInsets.all(10),
+        padding: const EdgeInsets.symmetric(horizontal: 10),
         height: 60,
         width: double.infinity,
         decoration: BoxDecoration(
