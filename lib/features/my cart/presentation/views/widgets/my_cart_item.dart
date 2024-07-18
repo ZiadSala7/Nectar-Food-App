@@ -46,6 +46,7 @@ class MyCartItem extends StatelessWidget {
         const Divider(
           indent: 15,
           endIndent: 15,
+          thickness: 0.5,
         ),
       ],
     );
