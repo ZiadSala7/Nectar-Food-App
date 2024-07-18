@@ -31,7 +31,7 @@ class ButtonsSection extends StatelessWidget {
         CustomButton(
           descriptionButtonTxt: 'Log in',
           onPressed: () {
-            GoRouter.of(context).push(AppRouters.favouritesView);
+            GoRouter.of(context).push(AppRouters.appView);
           },
         ),
         Row(

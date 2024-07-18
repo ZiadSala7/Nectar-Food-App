@@ -11,7 +11,7 @@ class FavouritesViewBody extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         SizedBox(
-          height: MediaQuery.of(context).size.height * 0.8,
+          height: MediaQuery.of(context).size.height * 0.75,
           child: ListView.builder(
             itemCount: 10,
             itemBuilder: (context, index) {
