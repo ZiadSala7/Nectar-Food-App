@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nectar_app/features/my%20cart/presentation/views/widgets/custom_my_cart_appbar.dart';
+import 'package:nectar_app/core/widgets/custom_appbar.dart';
 import 'package:nectar_app/features/my%20cart/presentation/views/widgets/my_cart_view_body.dart';
 
 class MyCartView extends StatelessWidget {
@@ -8,7 +8,7 @@ class MyCartView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: customMyCartAppBar(),
+      appBar: customAppBar('My Cart'),
       body: const MyCartViewBody(),
     );
   }

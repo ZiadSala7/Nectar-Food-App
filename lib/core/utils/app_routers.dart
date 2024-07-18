@@ -1,6 +1,7 @@
 import 'package:go_router/go_router.dart';
 import 'package:nectar_app/features/explore/presentation/views/display_products_view.dart';
 import 'package:nectar_app/features/explore/presentation/views/explore_view.dart';
+import 'package:nectar_app/features/favourites/presentation/views/favourites_view.dart';
 import 'package:nectar_app/features/forget%20password/presentation/views/forget_password_view.dart';
 import 'package:nectar_app/features/home/presentation/views/home_view.dart';
 import 'package:nectar_app/features/home/presentation/views/product_details_view.dart';
@@ -24,6 +25,7 @@ abstract class AppRouters {
   static const String searchView = '/searchView';
   static const String dislayProducts = '/displayProduct';
   static const String myCartView = '/myCartView';
+  static const String favouritesView = '/favouritesView';
   static final router = GoRouter(
     routes: [
       GoRoute(
@@ -73,6 +75,10 @@ abstract class AppRouters {
       GoRoute(
         path: myCartView,
         builder: (context, state) => const MyCartView(),
+      ),
+      GoRoute(
+        path: favouritesView,
+        builder: (context, state) => const FavouritesView(),
       ),
     ],
   );
