@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nectar_app/core/widgets/custom_button.dart';
-import 'package:nectar_app/features/home/presentation/views/custom_details_view_appbar.dart';
+import 'package:nectar_app/features/home/presentation/views/widgets/custom_details_view_appbar.dart';
 import 'package:nectar_app/features/home/presentation/views/widgets/product_details_view_body.dart';
 import 'package:nectar_app/features/home/presentation/views/widgets/product_image_card.dart';
 
