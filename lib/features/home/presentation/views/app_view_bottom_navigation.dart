@@ -41,15 +41,15 @@ class _AppViewBottomNavigationState extends State<AppViewBottomNavigation> {
         selectedItemColor: commonColor,
         items: const [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
+            icon: Icon(Icons.storefront),
+            label: 'Store',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.manage_search_sharp),
+            icon: Icon(Icons.manage_search),
             label: 'Explore',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_cart_outlined),
+            icon: Icon(Icons.shopping_cart),
             label: 'Cart',
           ),
           BottomNavigationBarItem(
@@ -57,7 +57,7 @@ class _AppViewBottomNavigationState extends State<AppViewBottomNavigation> {
             label: 'Favourites',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person_3_outlined),
+            icon: Icon(Icons.person_outlined),
             label: 'Account',
           ),
         ],
