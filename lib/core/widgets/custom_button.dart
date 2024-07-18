@@ -5,8 +5,11 @@ import 'package:nectar_app/core/utils/styles.dart';
 class CustomButton extends StatelessWidget {
   final String descriptionButtonTxt;
   final Function() onPressed;
-  const CustomButton(
-      {super.key, required this.descriptionButtonTxt, required this.onPressed});
+  const CustomButton({
+    super.key,
+    required this.descriptionButtonTxt,
+    required this.onPressed,
+  });
 
   @override
   Widget build(BuildContext context) {
