@@ -8,8 +8,6 @@ class MyCartViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: double.infinity,
-      width: double.infinity,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
@@ -25,7 +23,7 @@ class MyCartViewBody extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 15),
             child: CustomMyCartButton(
               descriptionButtonTxt: 'Go to Checkout',
               onPressed: () {},
