@@ -23,6 +23,7 @@ class AppImages {
   static const String meat = 'assets/images/meats.png';
   static const String chicken = 'assets/images/chicken.png';
   static const String beverages = 'assets/images/beverages.png';
+  static const String icon = 'assets/images/icon.png';
   static const String backgroundProduct =
       'assets/images/backgroundProductImg.png';
 }
