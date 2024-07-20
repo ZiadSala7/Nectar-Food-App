@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:nectar_app/constants.dart';
-import 'package:nectar_app/core/utils/styles.dart';
 import 'package:nectar_app/core/widgets/custom_button.dart';
+
+import 'filtering_chosen_section.dart';
+import 'filtering_decoration_method.dart';
 
 class FilterViewBody extends StatelessWidget {
   const FilterViewBody({super.key});
@@ -55,106 +56,6 @@ class FilterViewBody extends StatelessWidget {
           ),
         ],
       ),
-    );
-  }
-
-  BoxDecoration filterViewBodyBoxDecorationMethod() {
-    return const BoxDecoration(
-      color: Color.fromARGB(67, 158, 158, 158),
-      borderRadius: BorderRadius.only(
-        topLeft: Radius.circular(30),
-        topRight: Radius.circular(30),
-      ),
-    );
-  }
-}
-
-class CustomFilteringChosenSection extends StatelessWidget {
-  final String category;
-  final String label1;
-  final String label2;
-  final String label3;
-  final String label4;
-  const CustomFilteringChosenSection({
-    super.key,
-    required this.category,
-    required this.label1,
-    required this.label2,
-    required this.label3,
-    required this.label4,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          category,
-          style: Styles.textStyle30.copyWith(
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        const SizedBox(
-          height: 10,
-        ),
-        CustomChosenFilteringItem(
-          label: label1,
-        ),
-        CustomChosenFilteringItem(
-          label: label2,
-        ),
-        CustomChosenFilteringItem(
-          label: label3,
-        ),
-        CustomChosenFilteringItem(
-          label: label4,
-        ),
-      ],
-    );
-  }
-}
-
-class CustomChosenFilteringItem extends StatefulWidget {
-  final String label;
-  const CustomChosenFilteringItem({super.key, required this.label});
-
-  @override
-  State<CustomChosenFilteringItem> createState() =>
-      _CustomChosenFilteringItemState();
-}
-
-class _CustomChosenFilteringItemState extends State<CustomChosenFilteringItem> {
-  bool isClicked = false;
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        IconButton(
-          onPressed: () {
-            setState(() {
-              isClicked = !isClicked;
-            });
-          },
-          icon: !isClicked
-              ? const Icon(
-                  Icons.check_box_outline_blank,
-                  size: 25,
-                )
-              : const Icon(
-                  Icons.check_box_rounded,
-                  size: 25,
-                  color: commonColor,
-                ),
-        ),
-        Text(
-          widget.label,
-          style: Styles.textStyle16.copyWith(
-            color: isClicked ? commonColor : Colors.black,
-            fontWeight: FontWeight.w500,
-          ),
-        ),
-      ],
     );
   }
 }
