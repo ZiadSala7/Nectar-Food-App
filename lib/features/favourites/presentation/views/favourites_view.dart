@@ -8,7 +8,7 @@ class FavouritesView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: customAppBar('Favourites'),
+      appBar: customAppBar('Favourites', null),
       body: const FavouritesViewBody(),
     );
   }

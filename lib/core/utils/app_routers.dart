@@ -10,6 +10,7 @@ import 'package:nectar_app/features/login/presentation/views/login_view.dart';
 import 'package:nectar_app/features/my%20cart/presentation/views/my_cart_view.dart';
 import 'package:nectar_app/features/on%20boarding/presentation/views/onboarding_view.dart';
 import 'package:nectar_app/features/reset%20password%20acepted/presentation/views/reset_password_accepted_view.dart';
+import 'package:nectar_app/features/search/presentation/views/filter_view.dart';
 import 'package:nectar_app/features/search/presentation/views/search_view.dart';
 import 'package:nectar_app/features/sign%20up/presentation/views/sign_up_view.dart';
 import 'package:nectar_app/features/splash/presentation/views/splash_view.dart';
@@ -28,6 +29,7 @@ abstract class AppRouters {
   static const String myCartView = '/myCartView';
   static const String favouritesView = '/favouritesView';
   static const String appView = '/appView';
+  static const String filterView = '/filterView';
 
   static final router = GoRouter(
     routes: [
@@ -86,6 +88,10 @@ abstract class AppRouters {
       GoRoute(
         path: appView,
         builder: (context, state) => const AppViewBottomNavigation(),
+      ),
+      GoRoute(
+        path: filterView,
+        builder: (context, state) => const FilterView(),
       ),
     ],
   );

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:nectar_app/constants.dart';
 import 'package:nectar_app/core/utils/app_images.dart';
+import 'package:nectar_app/core/utils/app_routers.dart';
 import 'package:nectar_app/features/search/presentation/views/widgets/outline_input_border_method.dart';
 
-AppBar customSearchViewAppBar() {
+AppBar customSearchViewAppBar(BuildContext context) {
   return AppBar(
     flexibleSpace: Container(
       color: Colors.white,
@@ -13,7 +15,9 @@ AppBar customSearchViewAppBar() {
         height: 50,
         width: 45,
         child: TextButton(
-          onPressed: () {},
+          onPressed: () {
+            GoRouter.of(context).push(AppRouters.filterView);
+          },
           child: Image.asset(AppImages.icon),
         ),
       ),
