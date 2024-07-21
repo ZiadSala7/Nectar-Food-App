@@ -6,12 +6,14 @@ import 'package:nectar_app/features/favourites/presentation/views/favourites_vie
 import 'package:nectar_app/features/home/presentation/views/home_view.dart';
 import 'package:nectar_app/features/my%20cart/presentation/views/my_cart_view.dart';
 
+import '../../../account/presentation/views/account_view.dart';
+
 List<Widget> widgets = [
   const HomeView(),
   const ExploreView(),
   const MyCartView(),
   const FavouritesView(),
-  const FavouritesView(),
+  const AccountView(),
 ];
 
 class AppViewBottomNavigation extends StatefulWidget {
