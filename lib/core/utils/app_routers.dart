@@ -8,6 +8,7 @@ import 'package:nectar_app/features/home/presentation/views/home_view.dart';
 import 'package:nectar_app/features/home/presentation/views/product_details_view.dart';
 import 'package:nectar_app/features/login/presentation/views/login_view.dart';
 import 'package:nectar_app/features/my%20cart/presentation/views/my_cart_view.dart';
+import 'package:nectar_app/features/my%20cart/presentation/views/order_accepted_view.dart';
 import 'package:nectar_app/features/on%20boarding/presentation/views/onboarding_view.dart';
 import 'package:nectar_app/features/reset%20password%20acepted/presentation/views/reset_password_accepted_view.dart';
 import 'package:nectar_app/features/search/presentation/views/filter_view.dart';
@@ -30,6 +31,8 @@ abstract class AppRouters {
   static const String favouritesView = '/favouritesView';
   static const String appView = '/appView';
   static const String filterView = '/filterView';
+  static const String orderAcceptedView = '/orderAcceptedView';
+  static const String appViewBottomNavigation = '/appViewBottomNavigation';
 
   static final router = GoRouter(
     routes: [
@@ -92,6 +95,14 @@ abstract class AppRouters {
       GoRoute(
         path: filterView,
         builder: (context, state) => const FilterView(),
+      ),
+      GoRoute(
+        path: orderAcceptedView,
+        builder: (context, state) => const OrderAcceptedView(),
+      ),
+      GoRoute(
+        path: appViewBottomNavigation,
+        builder: (context, state) => const AppViewBottomNavigation(),
       ),
     ],
   );

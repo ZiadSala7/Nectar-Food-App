@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:nectar_app/core/utils/app_routers.dart';
 import '../../../../../core/utils/styles.dart';
 import '../../../../../core/widgets/custom_button.dart';
 import 'custom_bottom_sheet_items_section.dart';
@@ -40,7 +42,9 @@ Future myCartShowModalBottomMethod(BuildContext context) {
             ),
             CustomButton(
               descriptionButtonTxt: 'Place Order',
-              onPressed: () {},
+              onPressed: () {
+                GoRouter.of(context).push(AppRouters.orderAcceptedView);
+              },
             ),
           ],
         ),

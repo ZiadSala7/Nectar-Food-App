@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:nectar_app/core/utils/app_images.dart';
 
-BoxDecoration backgroundBoxDecorationImg() {
-  return const BoxDecoration(
+BoxDecoration backgroundBoxDecorationImg(
+    {String img = AppImages.backgroundImg, BoxFit boxFit = BoxFit.fitWidth}) {
+  return BoxDecoration(
     image: DecorationImage(
-      image: AssetImage(AppImages.backgroundImg),
-      fit: BoxFit.fitWidth,
+      image: AssetImage(img),
+      fit: boxFit,
     ),
   );
 }

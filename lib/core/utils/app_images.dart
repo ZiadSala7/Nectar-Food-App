@@ -25,6 +25,9 @@ class AppImages {
   static const String beverages = 'assets/images/beverages.png';
   static const String icon = 'assets/images/icon.png';
   static const String creditCard = 'assets/images/credit_card.png';
+  static const String orderAcc = 'assets/images/orderAcc.png';
+  static const String orderAccBackground =
+      'assets/images/orderAccBackground.png';
   static const String backgroundProduct =
       'assets/images/backgroundProductImg.png';
 }
