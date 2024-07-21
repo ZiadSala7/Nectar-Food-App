@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:nectar_app/features/my%20cart/presentation/views/widgets/custom_my_cart_button.dart';
 import 'package:nectar_app/features/my%20cart/presentation/views/widgets/my_cart_item.dart';
 
+import 'dialog_method.dart';
+
 class MyCartViewBody extends StatelessWidget {
   const MyCartViewBody({super.key});
 
@@ -26,7 +28,9 @@ class MyCartViewBody extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 15),
             child: CustomMyCartButton(
               descriptionButtonTxt: 'Go to Checkout',
-              onPressed: () {},
+              onPressed: () {
+                myCartShowModalBottomMethod(context);
+              },
             ),
           ),
         ],

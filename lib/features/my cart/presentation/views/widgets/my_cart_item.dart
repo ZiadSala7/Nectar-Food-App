@@ -12,36 +12,40 @@ class MyCartItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Image.asset(
-              AppImages.apple,
-              width: 130,
-            ),
-            const MyCartListTile(),
-            const SizedBox(
-              width: 40,
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                IconButton(
-                  onPressed: () {},
-                  icon: const Icon(Icons.close),
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                Text(
-                  r'$4.99',
-                  style: Styles.textStyle20.copyWith(
-                    color: Colors.black,
+        SizedBox(
+          height: 130,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Image.asset(
+                AppImages.apple,
+                width: 125,
+                height: 65,
+              ),
+              const MyCartListTile(),
+              const SizedBox(
+                width: 40,
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  IconButton(
+                    onPressed: () {},
+                    icon: const Icon(Icons.close),
                   ),
-                )
-              ],
-            ),
-          ],
+                  const SizedBox(
+                    height: 40,
+                  ),
+                  Text(
+                    r'$4.99',
+                    style: Styles.textStyle20.copyWith(
+                      color: Colors.black,
+                    ),
+                  )
+                ],
+              ),
+            ],
+          ),
         ),
         const Divider(
           indent: 15,

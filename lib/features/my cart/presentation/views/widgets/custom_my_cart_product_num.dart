@@ -17,7 +17,7 @@ class _CustomCartProductNumState extends State<CustomCartProductNum> {
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
         Container(
-          height: 45,
+          height: 50,
           width: 45,
           decoration: boxDecorationMethodCart(),
           child: IconButton(
@@ -26,10 +26,16 @@ class _CustomCartProductNumState extends State<CustomCartProductNum> {
                 cnt > 0 ? cnt-- : cnt = cnt;
               });
             },
-            icon: const Icon(
-              Icons.minimize_rounded,
+            icon: const Padding(
+              padding: EdgeInsets.only(bottom: 30),
+              child: Icon(
+                Icons.minimize_sharp,
+              ),
             ),
           ),
+        ),
+        const SizedBox(
+          width: 5,
         ),
         Center(
           child: Text(
@@ -39,8 +45,11 @@ class _CustomCartProductNumState extends State<CustomCartProductNum> {
             ),
           ),
         ),
+        const SizedBox(
+          width: 5,
+        ),
         Container(
-          height: 45,
+          height: 50,
           width: 45,
           decoration: boxDecorationMethodCart(),
           child: IconButton(
