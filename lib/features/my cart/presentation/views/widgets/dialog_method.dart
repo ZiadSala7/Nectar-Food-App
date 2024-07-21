@@ -19,7 +19,7 @@ Future myCartShowModalBottomMethod(BuildContext context) {
           children: [
             const CustomCheckoutTitleWidget(),
             const SizedBox(
-              height: 15,
+              height: 16,
             ),
             const Divider(
               thickness: 0.5,
