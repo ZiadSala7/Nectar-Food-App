@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:nectar_app/core/widgets/custom_password_text_field.dart';
 import 'package:nectar_app/core/widgets/custom_text_field.dart';
+import 'package:nectar_app/features/sign%20up/data/sign_up_controllers.dart';
+import 'package:nectar_app/features/sign%20up/presentation/views/widgets/validate_methods.dart';
 
 class CustomSignUpTextField extends StatelessWidget {
   const CustomSignUpTextField({super.key});
@@ -14,27 +16,42 @@ class CustomSignUpTextField extends StatelessWidget {
           height: 10,
         ),
         const Text('Username'),
-        CustomTextField(),
+        CustomTextField(
+          textEditingController: SignUpControllers.userName,
+          validate: userNameValidateMethod,
+        ),
         const SizedBox(
           height: 30,
         ),
         const Text('Phone number'),
-        CustomTextField(),
+        CustomTextField(
+          textEditingController: SignUpControllers.phoneNumber,
+          validate: phoneNumberValidateMethod,
+        ),
         const SizedBox(
           height: 30,
         ),
         const Text('Email'),
-        CustomTextField(),
+        CustomTextField(
+          textEditingController: SignUpControllers.email,
+          validate: emailValidateMethod,
+        ),
         const SizedBox(
           height: 30,
         ),
         const Text('Password'),
-        const CustomPasswordTextField(),
+        CustomPasswordTextField(
+          textEditingController: SignUpControllers.password,
+          validate: passwordValidateMethod,
+        ),
         const SizedBox(
           height: 10,
         ),
         const Text('Confirm Password'),
-        const CustomPasswordTextField(),
+        CustomPasswordTextField(
+          textEditingController: SignUpControllers.confirmPassword,
+          validate: confirmPasswordValidateMethod,
+        ),
       ],
     );
   }

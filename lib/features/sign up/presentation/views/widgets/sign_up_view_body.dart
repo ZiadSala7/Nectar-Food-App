@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:nectar_app/core/widgets/custom_background_box_decoration_img.dart';
 import 'package:nectar_app/core/widgets/custom_button.dart';
 import 'package:nectar_app/core/widgets/custom_orange_carrot_img.dart';
 import 'package:nectar_app/features/sign%20up/presentation/views/widgets/custom_sign_up_texts.dart';

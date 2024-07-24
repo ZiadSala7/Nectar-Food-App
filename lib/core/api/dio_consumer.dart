@@ -11,14 +11,16 @@ class DioConsumer extends ApiConsumer {
     //ApiInterceptors => can override its methods
     dio.interceptors.add(ApiInterceptors());
     //has a ready functions to use to prints details  of: response, request, request headers and errors
-    dio.interceptors.add(LogInterceptor(
-      request: true,
-      requestHeader: true,
-      requestBody: true,
-      responseBody: true,
-      responseHeader: true,
-      error: true,
-    ));
+    dio.interceptors.add(
+      LogInterceptor(
+        request: true,
+        requestHeader: true,
+        requestBody: true,
+        responseBody: true,
+        responseHeader: true,
+        error: true,
+      ),
+    );
   }
 
   @override

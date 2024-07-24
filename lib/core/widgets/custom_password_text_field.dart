@@ -2,7 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:nectar_app/constants.dart';
 
 class CustomPasswordTextField extends StatefulWidget {
-  const CustomPasswordTextField({super.key});
+  final TextEditingController? textEditingController;
+  final String? Function(String?)? validate;
+  const CustomPasswordTextField({
+    super.key,
+    this.textEditingController,
+    this.validate,
+  });
 
   @override
   State<CustomPasswordTextField> createState() =>
@@ -14,7 +20,10 @@ class _CustomPasswordTextFieldState extends State<CustomPasswordTextField> {
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return TextFormField(
+      autovalidateMode: AutovalidateMode.always,
+      controller: widget.textEditingController,
+      validator: widget.validate,
       obscureText: isSecure,
       decoration: InputDecoration(
         focusColor: Colors.white,

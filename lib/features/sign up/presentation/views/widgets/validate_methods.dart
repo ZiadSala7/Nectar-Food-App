@@ -1,0 +1,41 @@
+import 'package:nectar_app/features/sign%20up/data/sign_up_controllers.dart';
+
+String? confirmPasswordValidateMethod(value) {
+  return value == SignUpControllers.password.text &&
+          SignUpControllers.password.text.isEmpty
+      ? null
+      : "Password isn't identical";
+}
+
+String? passwordValidateMethod(value) {
+  return ((value!.contains(RegExp(r'[a-z]')) &&
+                  value.contains(RegExp(r'[A-Z]')) &&
+                  value.contains(RegExp(r'[!\/@#$%^&*(),.?":{}|<>+=-]')) &&
+                  value.contains(RegExp(r'[0-9]'))) &&
+              value.length >= 8 ||
+          value.isEmpty)
+      ? null
+      : "Password must contain at least one lowercase letter, \none uppercase letter, one digit, and one special character";
+}
+
+String? emailValidateMethod(value) {
+  return (!value!.contains(RegExp(
+              r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$')) &&
+          value.isNotEmpty)
+      ? "Enter a valid email"
+      : null;
+}
+
+String? phoneNumberValidateMethod(value) {
+  return (!value!.contains(RegExp(r'[a-z]')) &&
+          !value.contains(RegExp(r'[A-Z]')) &&
+          !value.contains(RegExp(r'[!\/@#$%^&*(),.?":{}|<>+=-]')))
+      ? null
+      : "Phone number must contain only numbers";
+}
+
+String? userNameValidateMethod(value) {
+  return (!value!.contains(RegExp(r'[!\/@#$%^&*(),.?":{}|<>+=-]')))
+      ? null
+      : "Username must contain only letters and number";
+}

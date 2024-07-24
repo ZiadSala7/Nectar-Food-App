@@ -8,22 +8,22 @@ class TextFieldSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text(
+        Text(
           'Email',
           style: Styles.textStyle14,
         ),
         CustomTextField(),
-        const SizedBox(
+        SizedBox(
           height: 40,
         ),
-        const Text(
+        Text(
           'Password',
           style: Styles.textStyle14,
         ),
-        const CustomPasswordTextField(),
+        CustomPasswordTextField(),
       ],
     );
   }

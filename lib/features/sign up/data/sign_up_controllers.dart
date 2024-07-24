@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class SignUpControllers {
+  static bool areSignUpControllersTrue = false;
   static TextEditingController userName = TextEditingController();
   static TextEditingController phoneNumber = TextEditingController();
   static TextEditingController email = TextEditingController();

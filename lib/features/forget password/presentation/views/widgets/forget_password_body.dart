@@ -29,7 +29,7 @@ class ForgetPasswordViewBody extends StatelessWidget {
               height: 15,
             ),
             const TextSectionForgetPasswordView(),
-            CustomTextField(),
+            const CustomTextField(),
             const SizedBox(
               height: 50,
             ),

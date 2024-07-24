@@ -7,21 +7,21 @@ class TextFieldResetPasswordSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text('Email'),
+        Text('Email'),
         CustomTextField(),
-        const SizedBox(
+        SizedBox(
           height: 40,
         ),
-        const Text('Password'),
-        const CustomPasswordTextField(),
-        const SizedBox(
+        Text('Password'),
+        CustomPasswordTextField(),
+        SizedBox(
           height: 40,
         ),
-        const Text('Confirm Password'),
-        const CustomPasswordTextField(),
+        Text('Confirm Password'),
+        CustomPasswordTextField(),
       ],
     );
   }
