@@ -11,27 +11,29 @@ class CustomSignUpTextField extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const SizedBox(
-          height: 40,
+          height: 10,
         ),
         const Text('Username'),
         CustomTextField(),
         const SizedBox(
-          height: 40,
+          height: 30,
+        ),
+        const Text('Phone number'),
+        CustomTextField(),
+        const SizedBox(
+          height: 30,
         ),
         const Text('Email'),
-        CustomTextField(
-          suffixIcon: IconButton(
-            icon: const Icon(
-              Icons.check,
-              color: Colors.green,
-            ),
-            onPressed: () {},
-          ),
-        ),
+        CustomTextField(),
         const SizedBox(
-          height: 40,
+          height: 30,
         ),
         const Text('Password'),
+        const CustomPasswordTextField(),
+        const SizedBox(
+          height: 10,
+        ),
+        const Text('Confirm Password'),
         const CustomPasswordTextField(),
       ],
     );

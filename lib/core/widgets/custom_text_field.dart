@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:nectar_app/constants.dart';
 
-// ignore: must_be_immutable
 class CustomTextField extends StatelessWidget {
-  IconButton? suffixIcon;
-  CustomTextField({super.key, this.suffixIcon});
+  final TextEditingController? textEditingController;
+  final IconButton? suffixIcon;
+  const CustomTextField({
+    super.key,
+    this.suffixIcon,
+    this.textEditingController,
+  });
 
   @override
   Widget build(BuildContext context) {
     return TextField(
+      controller: textEditingController,
       cursorColor: commonColor,
       decoration: InputDecoration(
         suffix: suffixIcon,

@@ -13,15 +13,16 @@ class SignUpViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: Container(
-        height: MediaQuery.of(context).size.height,
-        padding: const EdgeInsets.all(10),
-        decoration: backgroundBoxDecorationImg(),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 15),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             const CustomOrangeCarrotImg(
-              mediaSize: 0.2,
+              mediaSize: 0.15,
+            ),
+            const SizedBox(
+              height: 30,
             ),
             const SignUpTextsSection(),
             const CustomSignUpTextField(),
