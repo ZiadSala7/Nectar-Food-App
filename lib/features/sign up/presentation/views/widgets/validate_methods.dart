@@ -34,8 +34,7 @@ String? passwordValidateMethod(value) {
 }
 
 String? confirmPasswordValidateMethod(value) {
-  return value == SignUpControllers.password.text &&
-          SignUpControllers.password.text.isEmpty
+  return value == SignUpControllers.password.text
       ? null
       : "Password isn't identical";
 }
