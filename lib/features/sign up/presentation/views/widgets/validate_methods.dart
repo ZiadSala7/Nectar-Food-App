@@ -1,4 +1,4 @@
-import 'package:nectar_app/features/sign%20up/data/sign_up_controllers.dart';
+import 'package:nectar_app/features/sign%20up/data/models/sign_up_controllers.dart';
 
 String? userNameValidateMethod(value) {
   return (!value!.contains(RegExp(r'[!\/@#$%^&*(),.?":{}|<>+=-]')))

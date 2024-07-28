@@ -5,34 +5,29 @@ class ServerException {}
 void dioExceptions(DioException e) {
   switch (e.type) {
     case DioExceptionType.connectionTimeout:
-      throw ServerException();
+      throw Exception("connection Timeout");
+
     case DioExceptionType.sendTimeout:
-      throw ServerException();
+      throw Exception("send Timeout");
+
     case DioExceptionType.receiveTimeout:
-      throw ServerException();
+      throw Exception("receive Timeout");
+
     case DioExceptionType.badCertificate:
-      throw ServerException();
+      throw Exception("bad Certificate");
+
     case DioExceptionType.cancel:
-      throw ServerException();
+      throw Exception("canceled");
+
     case DioExceptionType.connectionError:
-      throw ServerException();
+      throw Exception("connection Error");
+
     case DioExceptionType.unknown:
-      throw ServerException();
+      throw Exception("unknown Error");
+
     case DioExceptionType.badResponse:
       switch (e.response!.statusCode) {
         case 400:
-          throw ServerException();
-        case 401:
-          throw ServerException();
-        case 403:
-          throw ServerException();
-        case 404:
-          throw ServerException();
-        case 409:
-          throw ServerException();
-        case 422:
-          throw ServerException();
-        case 504:
           throw ServerException();
       }
   }

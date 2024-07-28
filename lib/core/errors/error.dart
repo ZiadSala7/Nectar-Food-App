@@ -1,4 +1,5 @@
 // {
+const successCase = "";
 //     "success": {
 //         "statusCode": 200,
 //         "isSuccess": true,
@@ -12,6 +13,9 @@
 //             "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhbDFpMiIsImp0aSI6IjZmYTY4ZDUzLWI3MjMtNDhjNi1iNzVhLTg4MzBlMzI4MWEyNCIsImVtYWlsIjoiemlhZDEzQGdtYWlsLmNvbSIsInVpZCI6IjZjMDY0NmI5LWVkZTktNDY4Mi04YTE0LTY5ZTM5ZWIyZjVmZCIsImV4cCI6MTcyNDQyMjIzMiwiaXNzIjoiU2VjdXJlQXBpIiwiYXVkIjoiU2VjdXJlQXBpVXNlciJ9.FE84AfpRxotkKUFEkDtZnhIyxGNnwP8QGjvz9407A-g"
 //         }
 //     },
+
+//========================================================================
+const userNameError = "";
 //     "username": {
 //         "statusCode": 400,
 //         "isSuccess": false,
@@ -21,32 +25,26 @@
 //             "Username must contain only letters and digits"
 //         ]
 //     },
+
+//=====================================================================
+const emailError = "";
 //     "email": {
 //         "statusCode": 400,
 //         "isSuccess": false,
 //         "message": "Email is Exist",
 //         "data": null
-//     },
-//     "notMatchingPassword": {
-//         "type": "https://tools.ietf.org/html/rfc7231#section-6.5.1",
-//         "title": "One or more validation errors occurred.",
-//         "status": 400,
-//         "traceId": "00-4e770437bbad321903eb01320c5556a8-3118d040a6c878e1-00",
-//         "errors": {
-//             "ConfirmPassword": [
-//                 "'ConfirmPassword' and 'Password' do not match."
-//             ]
-//         }
-//     },
-//     "weekPassword": {
-//         "type": "https://tools.ietf.org/html/rfc7231#section-6.5.1",
-//         "title": "One or more validation errors occurred.",
-//         "status": 400,
-//         "traceId": "00-bde6fb92b06d1f4dcbc75b366602a1e4-af98114c34c3d3ac-00",
-//         "errors": {
-//             "Password": [
-//                 "Password must contain at least one lowercase letter, one uppercase letter, one digit, and one special character"
-//             ]
-//         }
-//     }
+
+//======================================================================
+const invalidPhoneNumber = "";
+//       {
+//           "type": "https://tools.ietf.org/html/rfc7231#section-6.5.1",
+//           "title": "One or more validation errors occurred.",
+//           "status": 400,
+//           "traceId": "00-49735d99f98f1bde35b92d06dc9c3f70-845228ed1df9e7ca-00",
+//           "errors": {
+//               "PhoneNumber": [
+//                   "Invalid Phone Number"
+//               ]
+//           }
+// }
 // }

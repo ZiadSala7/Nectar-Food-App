@@ -15,4 +15,12 @@ class SignUpControllers {
     password.dispose();
     confirmPassword.dispose();
   }
+
+  static bool isNotEmpty() {
+    return (userName.text.isNotEmpty &&
+        phoneNumber.text.isNotEmpty &&
+        email.text.isNotEmpty &&
+        password.text.isNotEmpty &&
+        confirmPassword.text.isNotEmpty);
+  }
 }

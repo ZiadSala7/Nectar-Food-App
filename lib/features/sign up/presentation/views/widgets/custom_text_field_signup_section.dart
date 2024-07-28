@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nectar_app/core/widgets/custom_password_text_field.dart';
 import 'package:nectar_app/core/widgets/custom_text_field.dart';
-import 'package:nectar_app/features/sign%20up/data/sign_up_controllers.dart';
+import 'package:nectar_app/features/sign%20up/data/models/sign_up_controllers.dart';
 import 'package:nectar_app/features/sign%20up/presentation/views/widgets/validate_methods.dart';
 
 class CustomSignUpTextField extends StatelessWidget {

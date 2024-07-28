@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nectar_app/core/widgets/custom_button.dart';
 import 'package:nectar_app/core/widgets/custom_orange_carrot_img.dart';
-import 'package:nectar_app/features/sign%20up/data/sign_up_controllers.dart';
+import 'package:nectar_app/features/sign%20up/data/models/sign_up_controllers.dart';
+import 'package:nectar_app/features/sign%20up/presentation/view%20models/sing_up_cubit/sign_up_cubit.dart';
+import 'package:nectar_app/features/sign%20up/presentation/view%20models/sing_up_cubit/sign_up_cubit_state.dart';
 import 'package:nectar_app/features/sign%20up/presentation/views/widgets/custom_sign_up_texts.dart';
 import 'package:nectar_app/features/sign%20up/presentation/views/widgets/custom_text_field_signup_section.dart';
 import 'package:nectar_app/features/sign%20up/presentation/views/widgets/login_button_navigator.dart';
@@ -12,42 +15,70 @@ class SignUpViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 15),
-        child: Form(
-          key: SignUpControllers.signUpFormKey,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              const CustomOrangeCarrotImg(
-                mediaSize: 0.15,
+    return BlocConsumer<SignUpCubit, SignUpCubitState>(
+      listener: (context, state) {
+        if (state is SignUpSuccessState) {
+          scaffoldMessenger(context, "Successful registering");
+        } else {
+          if (state is SignUpFailureState) {
+            scaffoldMessenger(context, state.errMessage);
+          }
+        }
+      },
+      builder: (context, state) {
+        return SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15),
+            child: Form(
+              key: SignUpControllers.signUpFormKey,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  const CustomOrangeCarrotImg(
+                    mediaSize: 0.15,
+                  ),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  const SignUpTextsSection(),
+                  const CustomSignUpTextField(),
+                  const CustomSignUpPrivacyTexts(),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  state is! SignUpLoadingState
+                      ? CustomButton(
+                          descriptionButtonTxt: 'Sign in',
+                          onPressed: () async {
+                            if (SignUpControllers.signUpFormKey.currentState!
+                                    .validate() &&
+                                SignUpControllers.isNotEmpty()) {
+                              await BlocProvider.of<SignUpCubit>(context)
+                                  .signUp();
+                            }
+                          },
+                        )
+                      : const Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 160),
+                          child: CircularProgressIndicator(),
+                        ),
+                  const LoginButtonNavigator(),
+                ],
               ),
-              const SizedBox(
-                height: 30,
-              ),
-              const SignUpTextsSection(),
-              const CustomSignUpTextField(),
-              const CustomSignUpPrivacyTexts(),
-              const SizedBox(
-                height: 20,
-              ),
-              CustomButton(
-                descriptionButtonTxt: 'Sign in',
-                onPressed: () {
-                  if (SignUpControllers.signUpFormKey.currentState!
-                      .validate()) {
-                    return ScaffoldMessenger.of(context)
-                        .showSnackBar(const SnackBar(content: Text('Success')));
-                  }
-                },
-              ),
-              const LoginButtonNavigator(),
-            ],
+            ),
           ),
-        ),
-      ),
+        );
+      },
     );
     //   child:  // );
   }
+}
+
+ScaffoldFeatureController<SnackBar, SnackBarClosedReason> scaffoldMessenger(
+    context, String text) {
+  return ScaffoldMessenger.of(context).showSnackBar(
+    SnackBar(
+      content: Text(text),
+    ),
+  );
 }
