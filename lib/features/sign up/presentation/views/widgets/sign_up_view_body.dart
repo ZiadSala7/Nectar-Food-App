@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
+import 'package:nectar_app/core/utils/app_routers.dart';
 import 'package:nectar_app/core/widgets/custom_button.dart';
 import 'package:nectar_app/core/widgets/custom_orange_carrot_img.dart';
 import 'package:nectar_app/features/sign%20up/data/models/sign_up_controllers.dart';
@@ -19,6 +21,7 @@ class SignUpViewBody extends StatelessWidget {
       listener: (context, state) {
         if (state is SignUpSuccessState) {
           scaffoldMessenger(context, "Successful registering");
+          GoRouter.of(context).pushReplacement(AppRouters.loginView);
         } else {
           if (state is SignUpFailureState) {
             scaffoldMessenger(context, state.errMessage);
