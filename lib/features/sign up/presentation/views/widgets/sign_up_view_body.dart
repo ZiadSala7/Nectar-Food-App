@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:nectar_app/core/utils/app_routers.dart';
 import 'package:nectar_app/core/widgets/custom_button.dart';
 import 'package:nectar_app/core/widgets/custom_orange_carrot_img.dart';
+import 'package:nectar_app/core/widgets/custom_scaffold_messenger.dart';
 import 'package:nectar_app/features/sign%20up/data/models/sign_up_controllers.dart';
 import 'package:nectar_app/features/sign%20up/presentation/view%20models/sing_up_cubit/sign_up_cubit.dart';
 import 'package:nectar_app/features/sign%20up/presentation/view%20models/sing_up_cubit/sign_up_cubit_state.dart';
@@ -75,13 +76,4 @@ class SignUpViewBody extends StatelessWidget {
     );
     //   child:  // );
   }
-}
-
-ScaffoldFeatureController<SnackBar, SnackBarClosedReason> scaffoldMessenger(
-    context, String text) {
-  return ScaffoldMessenger.of(context).showSnackBar(
-    SnackBar(
-      content: Text(text),
-    ),
-  );
 }
