@@ -23,4 +23,12 @@ class SignUpControllers {
         password.text.isNotEmpty &&
         confirmPassword.text.isNotEmpty);
   }
+
+  static clearControllers() {
+    userName.clear();
+    phoneNumber.clear();
+    email.clear();
+    password.clear();
+    confirmPassword.clear();
+  }
 }

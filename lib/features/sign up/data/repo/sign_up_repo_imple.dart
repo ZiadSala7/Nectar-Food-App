@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:nectar_app/core/api/dio_consumer.dart';
 import 'package:nectar_app/core/api/endpoints.dart';
+import 'package:nectar_app/features/sign%20up/data/models/sign_up_controllers.dart';
 import 'package:nectar_app/features/sign%20up/data/models/sign_up_model.dart';
 import 'package:nectar_app/features/sign%20up/data/repo/sign_up_repo.dart';
 
@@ -36,6 +37,7 @@ class SignUpRepoImple extends SignUpRepo {
       } else {
         DataModel dataModel = DataModel.fromJson(response);
         signUpModel.data = dataModel;
+        SignUpControllers.clearControllers();
         return right(signUpModel);
       }
     } catch (e) {
