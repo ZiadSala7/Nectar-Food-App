@@ -1,8 +1,8 @@
 import 'package:dartz/dartz.dart';
-import 'package:nectar_app/features/sign%20up/data/models/sign_up_model.dart';
+import 'package:nectar_app/core/errors/auth_model.dart';
 
 abstract class SignUpRepo {
-  Future<Either<String, SignUpModel>> signUp({
+  Future<Either<String, AuthModel>> signUp({
     required String username,
     required String phoneNumber,
     required String email,

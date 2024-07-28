@@ -1,13 +1,13 @@
 import 'package:nectar_app/core/api/endpoints.dart';
 
-class SignUpModel {
+class AuthModel {
   final bool failed;
   final int statusCode;
   final bool isSuccess;
   final String message;
   dynamic data;
 
-  SignUpModel({
+  AuthModel({
     required this.statusCode,
     required this.isSuccess,
     required this.message,
@@ -15,8 +15,8 @@ class SignUpModel {
     this.failed = false,
   });
 
-  factory SignUpModel.fromJson(Map<String, dynamic> jsonData, bool failed) {
-    return SignUpModel(
+  factory AuthModel.fromJson(Map<String, dynamic> jsonData, bool failed) {
+    return AuthModel(
       statusCode: jsonData[ApiKeys.statusCode],
       isSuccess: jsonData[ApiKeys.isSuccess],
       message: jsonData[ApiKeys.message],

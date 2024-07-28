@@ -2,7 +2,7 @@ import 'package:dartz/dartz.dart';
 import 'package:nectar_app/core/api/dio_consumer.dart';
 import 'package:nectar_app/core/api/endpoints.dart';
 import 'package:nectar_app/features/sign%20up/data/models/sign_up_controllers.dart';
-import 'package:nectar_app/features/sign%20up/data/models/sign_up_model.dart';
+import 'package:nectar_app/core/errors/auth_model.dart';
 import 'package:nectar_app/features/sign%20up/data/repo/sign_up_repo.dart';
 
 class SignUpRepoImple extends SignUpRepo {
@@ -10,7 +10,7 @@ class SignUpRepoImple extends SignUpRepo {
   SignUpRepoImple(this.api);
 
   @override
-  Future<Either<String, SignUpModel>> signUp({
+  Future<Either<String, AuthModel>> signUp({
     required String username,
     required String phoneNumber,
     required String email,
@@ -29,7 +29,7 @@ class SignUpRepoImple extends SignUpRepo {
         },
         null,
       );
-      SignUpModel signUpModel = SignUpModel.fromJson(response, false);
+      AuthModel signUpModel = AuthModel.fromJson(response, false);
       if (signUpModel.statusCode != 200) {
         return left(signUpModel.data == null
             ? signUpModel.message

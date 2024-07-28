@@ -1,4 +1,4 @@
-import 'package:nectar_app/features/sign%20up/data/models/sign_up_model.dart';
+import 'package:nectar_app/core/errors/auth_model.dart';
 
 abstract class SignUpCubitState {}
 
@@ -7,7 +7,7 @@ class SignUpInitialState extends SignUpCubitState {}
 class SignUpLoadingState extends SignUpCubitState {}
 
 class SignUpSuccessState extends SignUpCubitState {
-  final SignUpModel signUpModel;
+  final AuthModel signUpModel;
 
   SignUpSuccessState({
     required this.signUpModel,
