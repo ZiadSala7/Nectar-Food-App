@@ -29,7 +29,7 @@ class SignUpRepoImple extends SignUpRepo {
         },
         null,
       );
-      AuthModel signUpModel = AuthModel.fromJson(response, false);
+      AuthModel signUpModel = AuthModel.fromJson(response);
       if (signUpModel.statusCode != 200) {
         return left(signUpModel.data == null
             ? signUpModel.message
