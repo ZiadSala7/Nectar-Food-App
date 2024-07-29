@@ -7,6 +7,7 @@ import 'package:nectar_app/core/utils/styles.dart';
 import 'package:nectar_app/core/widgets/custom_button.dart';
 import 'package:nectar_app/core/widgets/custom_scaffold_messenger.dart';
 import 'package:nectar_app/core/widgets/text_button.dart';
+import 'package:nectar_app/features/login/data/model/login_controllers.dart';
 import 'package:nectar_app/features/login/presentation/view%20models/login_cubit/login_cubit.dart';
 import 'package:nectar_app/features/login/presentation/view%20models/login_cubit/login_cubit_states.dart';
 
@@ -21,6 +22,7 @@ class ButtonsSection extends StatelessWidget {
           scaffoldMessenger(context, state.errMessage);
         } else if (state is LoginCubitStateSuccess) {
           scaffoldMessenger(context, "Welcome broo");
+          LoginControllers.clear();
         }
       },
       builder: (context, state) {

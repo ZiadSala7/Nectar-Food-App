@@ -8,4 +8,9 @@ class LoginControllers {
     email.dispose();
     password.dispose();
   }
+
+  static clear() {
+    email.clear();
+    password.clear();
+  }
 }
