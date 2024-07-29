@@ -48,7 +48,12 @@ class ButtonsSection extends StatelessWidget {
                     descriptionButtonTxt: 'Log in',
                     onPressed: () async {
                       // GoRouter.of(context).push(AppRouters.appView);
-                      await BlocProvider.of<LoginCubit>(context).login();
+                      if (LoginControllers.isNotEmpty()) {
+                        await BlocProvider.of<LoginCubit>(context).login();
+                      } else {
+                        scaffoldMessenger(
+                            context, 'Check your email and password');
+                      }
                     },
                   )
                 : const Padding(

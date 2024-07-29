@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class LoginControllers {
+  static final loginFormKey = GlobalKey<FormState>();
   static TextEditingController email = TextEditingController();
   static TextEditingController password = TextEditingController();
 
@@ -12,5 +13,9 @@ class LoginControllers {
   static clear() {
     email.clear();
     password.clear();
+  }
+
+  static bool isNotEmpty() {
+    return (email.text.isNotEmpty && password.text.isNotEmpty);
   }
 }
