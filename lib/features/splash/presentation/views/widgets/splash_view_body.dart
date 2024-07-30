@@ -21,7 +21,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
   void initState() {
     super.initState();
     initSlidingAnimation();
-    homeNavidation();
+    homeNavigation();
   }
 
   @override
@@ -55,7 +55,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
     animationController.forward();
   }
 
-  void homeNavidation() {
+  void homeNavigation() {
     Future.delayed(kTransitionDuration, () async {
       final prefs = await SharedPreferences.getInstance();
       final onboarding = prefs.getBool('onboarding');

@@ -1,3 +1,4 @@
+import 'package:nectar_app/features/forget%20password/data/models/forget_password_controllers.dart';
 import 'package:nectar_app/features/sign%20up/data/models/sign_up_controllers.dart';
 
 String? userNameValidateMethod(value) {
@@ -35,6 +36,12 @@ String? passwordValidateMethod(value) {
 
 String? confirmPasswordValidateMethod(value) {
   return value == SignUpControllers.password.text || value.isEmpty
+      ? null
+      : "Password isn't identical";
+}
+
+String? confirmPasswordValidateMethodReset(value) {
+  return value == ForgetPasswordControllers.password.text || value.isEmpty
       ? null
       : "Password isn't identical";
 }

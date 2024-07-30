@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nectar_app/core/api/dio_consumer.dart';
 import 'package:nectar_app/features/forget%20password/data/repo/forget_password_repo_imple.dart';
 import 'package:nectar_app/features/forget%20password/presentation/view%20models/forget_pass_cubit/forget_pass_cubit.dart';
+import 'package:nectar_app/features/forget%20password/presentation/view%20models/reset_password_cubit/reset_password_cubit.dart';
 import 'package:nectar_app/features/forget%20password/presentation/view%20models/send_code_cubit/send_code_cubit.dart';
 import 'package:nectar_app/features/forget%20password/presentation/views/widgets/forget_password_body.dart';
 
@@ -23,6 +24,13 @@ class ForgetPasswordView extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => SendCodeCubit(
+            ForgetPasswordRepoImple(
+              api: DioConsumer(Dio()),
+            ),
+          ),
+        ),
+        BlocProvider(
+          create: (context) => ResetPasswordCubit(
             ForgetPasswordRepoImple(
               api: DioConsumer(Dio()),
             ),

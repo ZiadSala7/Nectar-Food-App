@@ -11,7 +11,7 @@ import 'package:nectar_app/features/forget%20password/presentation/view%20models
 import 'package:nectar_app/features/forget%20password/presentation/views/widgets/custom_appbar.dart';
 import 'package:nectar_app/features/forget%20password/presentation/views/widgets/send_code_show_modal_bottom_sheet.dart';
 import 'package:nectar_app/features/forget%20password/presentation/views/widgets/text_section_forget_password.dart';
-import 'package:nectar_app/features/sign%20up/presentation/views/widgets/validate_methods.dart';
+import 'package:nectar_app/core/widgets/validate_methods.dart';
 
 class ForgetPasswordViewBody extends StatelessWidget {
   const ForgetPasswordViewBody({super.key});

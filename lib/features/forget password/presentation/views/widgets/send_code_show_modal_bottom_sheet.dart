@@ -50,15 +50,8 @@ class SendCodeShowModalBottomSheet extends StatelessWidget {
                             if (code.length == 6) {
                               await BlocProvider.of<SendCodeCubit>(context)
                                   .sendCode(code);
-                              if (state is SendCodeSuccessState) {
-                                scaffoldMessenger(context, state.successMsg);
-                                GoRouter.of(context).pop();
-                                showBottomSheet(
-                                    context: context,
-                                    builder: (context) {
-                                      return const ResetPasswordBottomSheet();
-                                    });
-                              } else if (state is SendCodeFailureState) {
+
+                              if (state is SendCodeFailureState) {
                                 scaffoldMessenger(context, state.errMessage);
                               }
                             }
@@ -70,7 +63,17 @@ class SendCodeShowModalBottomSheet extends StatelessWidget {
           ),
         );
       },
-      listener: (context, state) {},
+      listener: (context, state) {
+        if (state is SendCodeSuccessState) {
+          scaffoldMessenger(context, state.successMsg);
+          GoRouter.of(context).pop();
+          showBottomSheet(
+              context: context,
+              builder: (context) {
+                return const ResetPasswordBottomSheet();
+              });
+        }
+      },
     );
   }
 }
