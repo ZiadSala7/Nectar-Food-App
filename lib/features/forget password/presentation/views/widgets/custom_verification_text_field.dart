@@ -23,7 +23,9 @@ class CustomVerificationTextField extends StatelessWidget {
           color: Colors.white,
         ),
         onChanged: (value) {
-          value.length == 1 ? FocusScope.of(context).nextFocus() : null;
+          value.length == 1
+              ? FocusScope.of(context).nextFocus()
+              : FocusScope.of(context).previousFocus();
         },
         decoration: InputDecoration(
           focusedBorder: OutlineInputBorder(
