@@ -4,7 +4,8 @@ import 'package:nectar_app/constants.dart';
 import 'package:nectar_app/core/utils/styles.dart';
 
 class CustomVerificationTextField extends StatelessWidget {
-  const CustomVerificationTextField({super.key});
+  final TextEditingController controller;
+  const CustomVerificationTextField({super.key, required this.controller});
 
   @override
   Widget build(BuildContext context) {
@@ -16,6 +17,7 @@ class CustomVerificationTextField extends StatelessWidget {
         borderRadius: BorderRadius.circular(10),
       ),
       child: TextField(
+        controller: controller,
         cursorColor: Colors.white,
         style: Styles.textStyle16.copyWith(
           color: Colors.white,

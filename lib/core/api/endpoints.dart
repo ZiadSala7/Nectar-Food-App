@@ -4,6 +4,7 @@ class Endpoints {
   static const String login = "Login";
   static const String changePassword = "ChangePassword";
   static const String sendNumForEmail = "SendNumForEmail?";
+  static const String confirmNum = "ConfirmNum?";
 }
 
 class ApiKeys {
@@ -20,4 +21,5 @@ class ApiKeys {
   static const String token = "token";
   static const String id = "id";
   static const String sendEmail = "sendEmail";
+  static const String num = "Num";
 }

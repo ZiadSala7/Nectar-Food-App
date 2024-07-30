@@ -60,8 +60,8 @@ class _SplashViewBodyState extends State<SplashViewBody>
       final prefs = await SharedPreferences.getInstance();
       final onboarding = prefs.getBool('onboarding');
       onboarding == false
-          ? GoRouter.of(context).push(AppRouters.onBoardingView)
-          : GoRouter.of(context).push(AppRouters.loginView);
+          ? GoRouter.of(context).pushReplacement(AppRouters.onBoardingView)
+          : GoRouter.of(context).pushReplacement(AppRouters.loginView);
     });
   }
 }

@@ -23,4 +23,20 @@ class ForgetPasswordRepoImple extends ForgetPasswordRepo {
       return left("Something went wrong, try again");
     }
   }
+
+  @override
+  Future<Either<String, String>> sendCode({required String code}) async {
+    try {
+      await api.getMethod(
+        Endpoints.confirmNum,
+        null,
+        {
+          ApiKeys.num: code,
+        },
+      );
+      return right("You can now change you password");
+    } catch (e) {
+      return left("Please, input a correct code");
+    }
+  }
 }

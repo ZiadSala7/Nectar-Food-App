@@ -11,7 +11,7 @@ class CustomShowModalBottomSheetTexts extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const Text(
-          'Reset Password',
+          'Code verification',
           style: Styles.textStyle30,
         ),
         const SizedBox(
@@ -27,7 +27,7 @@ class CustomShowModalBottomSheetTexts extends StatelessWidget {
           height: 40,
         ),
         const Text(
-          'Enter the 5 digits code',
+          'Enter the 6 digits code',
           style: Styles.textStyle20,
         ),
         const SizedBox(
