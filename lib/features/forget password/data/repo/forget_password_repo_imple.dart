@@ -10,16 +10,17 @@ class ForgetPasswordRepoImple extends ForgetPasswordRepo {
 
   @override
   Future<Either<String, String>> sendEmail() async {
-    final response = await api.postMethod(
-      Endpoints.sendNumForEmail,
-      null,
-      {
-        ApiKeys.sendEmail: ForgetPasswordControllers.email.text,
-      },
-    );
-
-    return response.statusCode == 200
-        ? left("Code has been sent successfully")
-        : right("Something went wrong, try again");
+    try {
+      await api.postMethod(
+        Endpoints.sendNumForEmail,
+        null,
+        {
+          ApiKeys.sendEmail: ForgetPasswordControllers.email.text,
+        },
+      );
+      return right("Code has been sent successfully");
+    } catch (e) {
+      return left("Something went wrong, try again");
+    }
   }
 }
