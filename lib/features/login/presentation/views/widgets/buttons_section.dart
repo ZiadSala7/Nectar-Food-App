@@ -22,7 +22,7 @@ class ButtonsSection extends StatelessWidget {
           scaffoldMessenger(context, state.errMessage);
         } else if (state is LoginCubitStateSuccess) {
           scaffoldMessenger(context, "Welcome broo");
-          LoginControllers.clear();
+          GoRouter.of(context).pushReplacement(AppRouters.appView);
         }
       },
       builder: (context, state) {
@@ -47,7 +47,6 @@ class ButtonsSection extends StatelessWidget {
                 ? CustomButton(
                     descriptionButtonTxt: 'Log in',
                     onPressed: () async {
-                      // GoRouter.of(context).push(AppRouters.appView);
                       if (LoginControllers.isNotEmpty()) {
                         await BlocProvider.of<LoginCubit>(context).login();
                       } else {
