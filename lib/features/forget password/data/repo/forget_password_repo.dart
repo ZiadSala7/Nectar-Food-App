@@ -1,3 +1,5 @@
+import 'package:dartz/dartz.dart';
+
 abstract class ForgetPasswordRepo {
-  Future<String> sendEmail();
+  Future<Either<String, String>> sendEmail();
 }

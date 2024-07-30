@@ -1,3 +1,4 @@
+import 'package:dartz/dartz.dart';
 import 'package:nectar_app/core/api/dio_consumer.dart';
 import 'package:nectar_app/core/api/endpoints.dart';
 import 'package:nectar_app/features/forget%20password/data/models/forget_password_controllers.dart';
@@ -8,7 +9,7 @@ class ForgetPasswordRepoImple extends ForgetPasswordRepo {
   ForgetPasswordRepoImple({required this.api});
 
   @override
-  Future<String> sendEmail() async {
+  Future<Either<String, String>> sendEmail() async {
     final response = await api.postMethod(
       Endpoints.sendNumForEmail,
       null,
@@ -18,7 +19,7 @@ class ForgetPasswordRepoImple extends ForgetPasswordRepo {
     );
 
     return response.statusCode == 200
-        ? "Code has been sent successfully"
-        : "Something went wrong, try again";
+        ? left("Code has been sent successfully")
+        : right("Something went wrong, try again");
   }
 }
