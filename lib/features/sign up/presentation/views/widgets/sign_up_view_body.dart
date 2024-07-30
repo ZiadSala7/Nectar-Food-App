@@ -30,11 +30,11 @@ class SignUpViewBody extends StatelessWidget {
         }
       },
       builder: (context, state) {
-        return SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15),
-            child: Form(
-              key: SignUpControllers.signUpFormKey,
+        return Form(
+          key: SignUpControllers.signUpFormKey,
+          child: SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [

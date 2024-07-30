@@ -11,7 +11,6 @@ class CustomSignUpPrivacyTexts extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      // mainAxisAlignment: MainAxisAlignment.start,
       children: [
         const SizedBox(
           height: 15,

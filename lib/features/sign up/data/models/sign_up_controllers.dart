@@ -8,14 +8,6 @@ class SignUpControllers {
   static TextEditingController password = TextEditingController();
   static TextEditingController confirmPassword = TextEditingController();
 
-  disposeFunction() {
-    userName.dispose();
-    phoneNumber.dispose();
-    email.dispose();
-    password.dispose();
-    confirmPassword.dispose();
-  }
-
   static bool isNotEmpty() {
     return (userName.text.isNotEmpty &&
         phoneNumber.text.isNotEmpty &&
