@@ -12,41 +12,55 @@ Future myCartShowModalBottomMethod(BuildContext context) {
     isScrollControlled: true,
     context: context,
     builder: (context) {
-      return Container(
-        padding: const EdgeInsets.all(15),
-        height: 550,
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            const CustomCheckoutTitleWidget(),
-            const SizedBox(
-              height: 16,
-            ),
-            const Divider(
-              thickness: 0.5,
-            ),
-            const BottomSheetItemsSection(),
-            const SizedBox(
-              height: 25,
-            ),
-            Text(
-              'By placing an order you agree to our',
-              style: Styles.textStyle18.copyWith(
-                fontWeight: FontWeight.w500,
+      final maxHeight = MediaQuery.sizeOf(context).height * 0.85;
+
+      return SafeArea(
+        child: AnimatedPadding(
+          duration: const Duration(milliseconds: 200),
+          padding: EdgeInsets.only(
+            bottom: MediaQuery.viewInsetsOf(context).bottom,
+          ),
+          child: ConstrainedBox(
+            constraints: BoxConstraints(maxHeight: maxHeight),
+            child: SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.all(15),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    const CustomCheckoutTitleWidget(),
+                    const SizedBox(
+                      height: 16,
+                    ),
+                    const Divider(
+                      thickness: 0.5,
+                    ),
+                    const BottomSheetItemsSection(),
+                    const SizedBox(
+                      height: 25,
+                    ),
+                    Text(
+                      'By placing an order you agree to our',
+                      style: Styles.textStyle18.copyWith(
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    const CustomGestureDetectorTextSection(),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    CustomButton(
+                      descriptionButtonTxt: 'Place Order',
+                      onPressed: () {
+                        GoRouter.of(context).push(AppRouters.orderAcceptedView);
+                      },
+                    ),
+                  ],
+                ),
               ),
             ),
-            const CustomGestureDetectorTextSection(),
-            const SizedBox(
-              height: 20,
-            ),
-            CustomButton(
-              descriptionButtonTxt: 'Place Order',
-              onPressed: () {
-                GoRouter.of(context).push(AppRouters.orderAcceptedView);
-              },
-            ),
-          ],
+          ),
         ),
       );
     },

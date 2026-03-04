@@ -11,35 +11,34 @@ class OrderAcceptedConstantPart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.sizeOf(context);
+
     return Column(
       children: [
-        const SizedBox(
-          height: 150,
+        SizedBox(
+          height: size.height * 0.12,
         ),
         Image.asset(
           AppImages.orderAcc,
-          width: 270,
-          height: 240,
+          width: size.width * 0.72,
+          height: size.width * 0.64,
         ),
         const SizedBox(
-          height: 60,
+          height: 24,
         ),
         Text(
-          'Your Order has been \naccepted',
+          'Your Order has been\naccepted',
           textAlign: TextAlign.center,
-          style: Styles.textStyle30.copyWith(
-              // color: Colors.black,
-              ),
+          style: Styles.textStyle30.copyWith(),
         ),
         const SizedBox(
-          height: 30,
+          height: 16,
         ),
         Text(
-          'Your items has been placcd and is on \nit’s way to being processed',
+          'Your items have been placed and are on\ntheir way to being processed',
           textAlign: TextAlign.center,
           style: Styles.textStyle16.copyWith(
             color: greyColor,
-            // fontWeight: FontWeight.normal,
           ),
         ),
       ],

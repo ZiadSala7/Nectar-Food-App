@@ -9,8 +9,10 @@ class ProductImageCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.sizeOf(context).width;
+
     return Container(
-      height: 300,
+      height: width < 360 ? 250 : 300,
       width: double.infinity,
       decoration: const BoxDecoration(
         color: greyColor,

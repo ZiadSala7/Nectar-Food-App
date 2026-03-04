@@ -9,11 +9,11 @@ class ExploreViewBodyGridView extends StatelessWidget {
   Widget build(BuildContext context) {
     return GridView.builder(
         itemCount: kinds.length,
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          crossAxisSpacing: 15,
-          mainAxisSpacing: 15,
-          childAspectRatio: 2 / 2.1,
+        gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+          maxCrossAxisExtent: 220,
+          crossAxisSpacing: 12,
+          mainAxisSpacing: 12,
+          childAspectRatio: 0.92,
         ),
         itemBuilder: (context, index) {
           return KindOfProductCard(

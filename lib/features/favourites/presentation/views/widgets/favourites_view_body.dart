@@ -10,8 +10,7 @@ class FavouritesViewBody extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        SizedBox(
-          height: MediaQuery.of(context).size.height * 0.75,
+        Expanded(
           child: ListView.builder(
             itemCount: 10,
             itemBuilder: (context, index) {
@@ -21,9 +20,12 @@ class FavouritesViewBody extends StatelessWidget {
         ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 15),
-          child: CustomButton(
-            descriptionButtonTxt: 'Add All To Cart',
-            onPressed: () {},
+          child: SafeArea(
+            top: false,
+            child: CustomButton(
+              descriptionButtonTxt: 'Add All To Cart',
+              onPressed: () {},
+            ),
           ),
         ),
       ],

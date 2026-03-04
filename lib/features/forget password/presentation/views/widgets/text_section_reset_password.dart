@@ -18,7 +18,7 @@ class TextSectionResetPassword extends StatelessWidget {
           height: 30,
         ),
         Text(
-          'Enter new password for your account to reset \npassword',
+          'Enter a new password for your account.',
           style: Styles.textStyle16.copyWith(
             color: greyColor,
           ),

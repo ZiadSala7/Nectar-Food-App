@@ -10,27 +10,27 @@ class LoginViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Container(
-        height: MediaQuery.of(context).size.height,
-        decoration: backgroundBoxDecorationImg(),
-        child: const Padding(
-          padding: EdgeInsets.all(10),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              CustomOrangeCarrotImg(),
-              TextSection(),
-              SizedBox(
-                height: 40,
-              ),
-              //TextField Data
-              TextFieldSection(),
-              SizedBox(
-                height: 15,
-              ),
-              ButtonsSection(),
-            ],
+    return Container(
+      decoration: backgroundBoxDecorationImg(),
+      child: SafeArea(
+        child: SingleChildScrollView(
+          child: const Padding(
+            padding: EdgeInsets.all(12),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                CustomOrangeCarrotImg(),
+                TextSection(),
+                SizedBox(
+                  height: 30,
+                ),
+                TextFieldSection(),
+                SizedBox(
+                  height: 15,
+                ),
+                ButtonsSection(),
+              ],
+            ),
           ),
         ),
       ),

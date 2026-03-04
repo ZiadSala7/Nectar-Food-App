@@ -14,11 +14,11 @@ class _CustomCartProductNumState extends State<CustomCartProductNum> {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      mainAxisSize: MainAxisSize.min,
       children: [
         Container(
-          height: 50,
-          width: 45,
+          height: 38,
+          width: 34,
           decoration: boxDecorationMethodCart(),
           child: IconButton(
             onPressed: () {
@@ -27,15 +27,16 @@ class _CustomCartProductNumState extends State<CustomCartProductNum> {
               });
             },
             icon: const Padding(
-              padding: EdgeInsets.only(bottom: 30),
+              padding: EdgeInsets.only(bottom: 20),
               child: Icon(
                 Icons.minimize_sharp,
+                size: 16,
               ),
             ),
           ),
         ),
         const SizedBox(
-          width: 5,
+          width: 8,
         ),
         Center(
           child: Text(
@@ -46,11 +47,11 @@ class _CustomCartProductNumState extends State<CustomCartProductNum> {
           ),
         ),
         const SizedBox(
-          width: 5,
+          width: 8,
         ),
         Container(
-          height: 50,
-          width: 45,
+          height: 38,
+          width: 34,
           decoration: boxDecorationMethodCart(),
           child: IconButton(
             onPressed: () {
@@ -60,6 +61,7 @@ class _CustomCartProductNumState extends State<CustomCartProductNum> {
             },
             icon: const Icon(
               Icons.add,
+              size: 16,
               color: commonColor,
             ),
           ),

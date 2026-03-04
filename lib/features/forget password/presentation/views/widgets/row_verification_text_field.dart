@@ -10,6 +10,15 @@ class RowVerificationTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controllers = [
+      ForgetPasswordControllers.c1,
+      ForgetPasswordControllers.c2,
+      ForgetPasswordControllers.c3,
+      ForgetPasswordControllers.c4,
+      ForgetPasswordControllers.c5,
+      ForgetPasswordControllers.c6,
+    ];
+
     return Container(
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
@@ -20,29 +29,23 @@ class RowVerificationTextField extends StatelessWidget {
           color: commonColorUpdated,
         ),
       ),
-      height: 80,
+      height: 74,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          CustomVerificationTextField(
-            controller: ForgetPasswordControllers.c1,
-          ),
-          CustomVerificationTextField(
-            controller: ForgetPasswordControllers.c2,
-          ),
-          CustomVerificationTextField(
-            controller: ForgetPasswordControllers.c3,
-          ),
-          CustomVerificationTextField(
-            controller: ForgetPasswordControllers.c4,
-          ),
-          CustomVerificationTextField(
-            controller: ForgetPasswordControllers.c5,
-          ),
-          CustomVerificationTextField(
-            controller: ForgetPasswordControllers.c6,
-          ),
-        ],
+        children: List.generate(
+          controllers.length * 2 - 1,
+          (index) {
+            if (index.isOdd) {
+              return const SizedBox(width: 8);
+            }
+            final controller = controllers[index ~/ 2];
+            return Expanded(
+              child: CustomVerificationTextField(
+                controller: controller,
+              ),
+            );
+          },
+        ),
       ),
     );
   }

@@ -7,8 +7,13 @@ import 'package:nectar_app/core/utils/styles.dart';
 import 'package:nectar_app/core/widgets/custom_button_add_item.dart';
 
 class CustomCardItem extends StatelessWidget {
+  final double? width;
+  final EdgeInsetsGeometry margin;
+
   const CustomCardItem({
     super.key,
+    this.width,
+    this.margin = EdgeInsets.zero,
   });
 
   @override
@@ -19,8 +24,8 @@ class CustomCardItem extends StatelessWidget {
       },
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 15),
-        margin: const EdgeInsets.only(right: 15),
-        width: 175,
+        margin: margin,
+        width: width,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
@@ -33,38 +38,48 @@ class CustomCardItem extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            const SizedBox(height: 8),
             Center(
               child: Image.asset(
                 AppImages.apple,
-                height: 100,
-                width: 100,
+                height: 85,
+                width: 85,
               ),
             ),
+            const SizedBox(height: 8),
             const Text(
               'Red Apple',
-              style: Styles.textStyle25,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              style: Styles.textStyle20,
             ),
             Text(
               '1Kg, priced',
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
               style: Styles.textStyle16.copyWith(
                 color: greyColor,
               ),
             ),
-            const SizedBox(
-              height: 30,
-            ),
+            const Spacer(),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
-                  r'$4.99',
-                  style: Styles.textStyle20.copyWith(
-                    color: Colors.black,
+                Expanded(
+                  child: Text(
+                    r'$4.99',
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: Styles.textStyle20.copyWith(
+                      color: Colors.black,
+                    ),
                   ),
                 ),
-                const CustomButtonAddItem()
+                const SizedBox(width: 8),
+                const CustomButtonAddItem(),
               ],
             ),
+            const SizedBox(height: 10),
           ],
         ),
       ),

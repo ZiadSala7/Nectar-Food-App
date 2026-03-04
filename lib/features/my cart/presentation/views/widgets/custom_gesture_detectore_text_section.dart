@@ -9,7 +9,8 @@ class CustomGestureDetectorTextSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return Wrap(
+      crossAxisAlignment: WrapCrossAlignment.center,
       children: [
         CustomGestureDetectorText(
           txt: 'Terms',

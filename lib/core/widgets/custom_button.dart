@@ -15,17 +15,23 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final mediaWidth = MediaQuery.sizeOf(context).width;
+    final buttonHeight = mediaWidth < 360 ? 58.0 : 66.0;
+
     return TextButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
         backgroundColor: color,
-        fixedSize: Size(MediaQuery.of(context).size.width * 0.85, 70),
+        fixedSize: Size(mediaWidth * 0.85, buttonHeight),
       ),
-      child: Text(
-        descriptionButtonTxt,
-        style: Styles.textStyle20.copyWith(
-          color: color == commonColor ? Colors.white : Colors.black,
+      child: FittedBox(
+        fit: BoxFit.scaleDown,
+        child: Text(
+          descriptionButtonTxt,
+          style: Styles.textStyle20.copyWith(
+            color: color == commonColor ? Colors.white : Colors.black,
+          ),
         ),
       ),
     );

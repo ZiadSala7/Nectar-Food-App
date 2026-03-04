@@ -15,7 +15,8 @@ class CustomSignUpPrivacyTexts extends StatelessWidget {
         const SizedBox(
           height: 15,
         ),
-        Row(
+        Wrap(
+          crossAxisAlignment: WrapCrossAlignment.center,
           children: [
             const Text(
               'By continuing you agree to our ',

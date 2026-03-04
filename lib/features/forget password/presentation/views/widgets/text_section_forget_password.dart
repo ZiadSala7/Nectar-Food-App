@@ -18,7 +18,7 @@ class TextSectionForgetPasswordView extends StatelessWidget {
           height: 30,
         ),
         Text(
-          'Enter your email for verification process we\nwill send 5 digits code to your email',
+          'Enter your email for verification process. We will send a 5 digits code to your email.',
           style: Styles.textStyle16.copyWith(
             color: greyColor,
           ),

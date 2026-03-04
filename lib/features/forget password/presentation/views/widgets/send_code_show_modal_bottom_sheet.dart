@@ -18,46 +18,62 @@ class SendCodeShowModalBottomSheet extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<SendCodeCubit, SendCodeCubitStates>(
       builder: (context, state) {
-        return SingleChildScrollView(
-          child: Container(
-            height: MediaQuery.of(context).size.height / 1.65,
-            width: MediaQuery.of(context).size.width,
-            decoration: customBoxDecorationMethod(),
-            child: Padding(
-              padding: const EdgeInsets.all(10),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  const SizedBox(
-                    height: 50,
-                  ),
-                  const CustomShowModalBottomSheetTexts(),
-                  const RowVerificationTextField(),
-                  const SizedBox(
-                    height: 35,
-                  ),
-                  state is SendCodeLoadingState
-                      ? const CircularProgressIndicator()
-                      : CustomButton(
-                          descriptionButtonTxt: 'Send code',
-                          onPressed: () async {
-                            String code = ForgetPasswordControllers.c1.text +
-                                ForgetPasswordControllers.c2.text +
-                                ForgetPasswordControllers.c3.text +
-                                ForgetPasswordControllers.c4.text +
-                                ForgetPasswordControllers.c5.text +
-                                ForgetPasswordControllers.c6.text;
-                            if (code.length == 6) {
-                              await BlocProvider.of<SendCodeCubit>(context)
-                                  .sendCode(code);
+        final maxHeight = MediaQuery.sizeOf(context).height * 0.7;
 
-                              if (state is SendCodeFailureState) {
-                                scaffoldMessenger(context, state.errMessage);
-                              }
-                            }
-                          },
+        return SafeArea(
+          child: AnimatedPadding(
+            duration: const Duration(milliseconds: 200),
+            padding: EdgeInsets.only(
+              bottom: MediaQuery.viewInsetsOf(context).bottom,
+            ),
+            child: ConstrainedBox(
+              constraints: BoxConstraints(maxHeight: maxHeight),
+              child: SingleChildScrollView(
+                child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  decoration: customBoxDecorationMethod(),
+                  child: Padding(
+                    padding: const EdgeInsets.all(14),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        const SizedBox(
+                          height: 20,
                         ),
-                ],
+                        const CustomShowModalBottomSheetTexts(),
+                        const RowVerificationTextField(),
+                        const SizedBox(
+                          height: 25,
+                        ),
+                        state is SendCodeLoadingState
+                            ? const Center(child: CircularProgressIndicator())
+                            : CustomButton(
+                                descriptionButtonTxt: 'Send code',
+                                onPressed: () async {
+                                  final code =
+                                      ForgetPasswordControllers.c1.text +
+                                          ForgetPasswordControllers.c2.text +
+                                          ForgetPasswordControllers.c3.text +
+                                          ForgetPasswordControllers.c4.text +
+                                          ForgetPasswordControllers.c5.text +
+                                          ForgetPasswordControllers.c6.text;
+
+                                  if (code.length == 6) {
+                                    await BlocProvider.of<SendCodeCubit>(
+                                            context)
+                                        .sendCode(code);
+
+                                    if (state is SendCodeFailureState) {
+                                      scaffoldMessenger(
+                                          context, state.errMessage);
+                                    }
+                                  }
+                                },
+                              ),
+                      ],
+                    ),
+                  ),
+                ),
               ),
             ),
           ),
@@ -68,10 +84,11 @@ class SendCodeShowModalBottomSheet extends StatelessWidget {
           scaffoldMessenger(context, state.successMsg);
           GoRouter.of(context).pop();
           showBottomSheet(
-              context: context,
-              builder: (context) {
-                return const ResetPasswordBottomSheet();
-              });
+            context: context,
+            builder: (context) {
+              return const ResetPasswordBottomSheet();
+            },
+          );
         }
       },
     );

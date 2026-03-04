@@ -12,8 +12,8 @@ AppBar customSearchViewAppBar(BuildContext context) {
     ),
     actions: [
       SizedBox(
-        height: 50,
-        width: 45,
+        height: 46,
+        width: 42,
         child: TextButton(
           onPressed: () {
             GoRouter.of(context).push(AppRouters.filterView);

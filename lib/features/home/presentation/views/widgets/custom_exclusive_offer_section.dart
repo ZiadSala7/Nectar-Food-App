@@ -6,14 +6,19 @@ class CustomExclusiveOfferSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 5),
-      height: 260,
+    final cardWidth = MediaQuery.sizeOf(context).width * 0.42;
+
+    return SizedBox(
+      height: 250,
       width: double.infinity,
       child: ListView.builder(
+        padding: const EdgeInsets.symmetric(horizontal: 5),
         scrollDirection: Axis.horizontal,
         itemCount: 6,
-        itemBuilder: (context, index) => const CustomCardItem(),
+        itemBuilder: (context, index) => CustomCardItem(
+          width: cardWidth,
+          margin: const EdgeInsets.only(right: 12),
+        ),
       ),
     );
   }

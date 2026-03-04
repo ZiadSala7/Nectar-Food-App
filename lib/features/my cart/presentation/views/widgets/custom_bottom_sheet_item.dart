@@ -17,13 +17,19 @@ class CustomBottomSheetItem extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(
-          title,
-          style: Styles.textStyle20.copyWith(
-            fontWeight: FontWeight.w500,
+        Expanded(
+          child: Text(
+            title,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: Styles.textStyle20.copyWith(
+              fontWeight: FontWeight.w500,
+            ),
           ),
         ),
+        const SizedBox(width: 10),
         Row(
+          mainAxisSize: MainAxisSize.min,
           children: [
             widget,
             IconButton(

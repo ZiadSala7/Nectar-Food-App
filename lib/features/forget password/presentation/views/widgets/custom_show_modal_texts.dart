@@ -18,7 +18,7 @@ class CustomShowModalBottomSheetTexts extends StatelessWidget {
           height: 20,
         ),
         Text(
-          'Enter the code that was sent to your email \naddress ',
+          'Enter the code that was sent to your email address.',
           style: Styles.textStyle16.copyWith(
             color: greyColor,
           ),

@@ -14,12 +14,14 @@ class OrderAcceptedViewBody extends StatelessWidget {
           img: AppImages.orderAccBackground, boxFit: BoxFit.cover),
       height: double.infinity,
       width: double.infinity,
-      child: const Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          OrderAcceptedConstantPart(),
-          OrderAcceptedViewBodyButtons(),
-        ],
+      child: SafeArea(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: const [
+            OrderAcceptedConstantPart(),
+            OrderAcceptedViewBodyButtons(),
+          ],
+        ),
       ),
     );
   }

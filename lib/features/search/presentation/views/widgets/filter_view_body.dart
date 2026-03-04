@@ -11,19 +11,19 @@ class FilterViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: filterViewBodyBoxDecorationMethod(),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          SizedBox(
-            height: MediaQuery.of(context).size.height * 0.8,
-            child: const Expanded(
-              child: Padding(
+      child: SafeArea(
+        top: false,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            const Expanded(
+              child: SingleChildScrollView(
                 padding: EdgeInsets.all(10),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     SizedBox(
-                      height: 20,
+                      height: 16,
                     ),
                     CustomFilteringChosenSection(
                       category: ' Categories',
@@ -33,7 +33,7 @@ class FilterViewBody extends StatelessWidget {
                       label4: 'Fast Food',
                     ),
                     SizedBox(
-                      height: 25,
+                      height: 20,
                     ),
                     CustomFilteringChosenSection(
                       category: ' Brand',
@@ -46,15 +46,15 @@ class FilterViewBody extends StatelessWidget {
                 ),
               ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15),
-            child: CustomButton(
-              descriptionButtonTxt: 'Apply Filter',
-              onPressed: () {},
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 8),
+              child: CustomButton(
+                descriptionButtonTxt: 'Apply Filter',
+                onPressed: () {},
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

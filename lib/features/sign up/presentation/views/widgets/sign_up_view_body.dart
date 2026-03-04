@@ -62,8 +62,7 @@ class SignUpViewBody extends StatelessWidget {
                             }
                           },
                         )
-                      : const Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 160),
+                      : const Center(
                           child: CircularProgressIndicator(),
                         ),
                   const LoginButtonNavigator(),

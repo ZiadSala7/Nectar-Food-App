@@ -11,6 +11,8 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.sizeOf(context).width;
+
     return SingleChildScrollView(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -28,10 +30,10 @@ class HomeViewBody extends StatelessWidget {
                 AppImages.freshVegetables,
               ),
             ],
-            height: 130,
+            height: width < 360 ? 110 : 130,
           ),
           const SizedBox(
-            height: 20,
+            height: 16,
           ),
           CustomHomeViewTextSection(
             firstTxt: 'Exclusive Offer',
@@ -42,7 +44,7 @@ class HomeViewBody extends StatelessWidget {
           ),
           const CustomExclusiveOfferSection(),
           const SizedBox(
-            height: 20,
+            height: 16,
           ),
           CustomHomeViewTextSection(
             firstTxt: 'Best Selling',
@@ -53,7 +55,7 @@ class HomeViewBody extends StatelessWidget {
           ),
           const CustomBestSellingSection(),
           const SizedBox(
-            height: 20,
+            height: 16,
           ),
           CustomHomeViewTextSection(
             firstTxt: 'Groceries',

@@ -29,54 +29,53 @@ class ForgetPasswordViewBody extends StatelessWidget {
       builder: (context, state) {
         return Form(
           key: ForgetPasswordControllers.forgetPassFormKey,
-          child: SingleChildScrollView(
-            child: Container(
-              height: MediaQuery.of(context).size.height,
-              width: MediaQuery.of(context).size.width,
-              padding: const EdgeInsets.all(20),
-              decoration: backgroundBoxDecorationImg(),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  const CustomAppBar(),
-                  const CustomOrangeCarrotImg(
-                    mediaSize: .15,
-                  ),
-                  const SizedBox(
-                    height: 15,
-                  ),
-                  const TextSectionForgetPasswordView(),
-                  CustomTextField(
-                    textEditingController: ForgetPasswordControllers.email,
-                    validate: emailValidateMethod,
-                  ),
-                  const SizedBox(
-                    height: 50,
-                  ),
-                  state is ForgetPassLoadingState
-                      ? const Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 150),
-                          child: CircularProgressIndicator(),
-                        )
-                      : CustomButton(
-                          descriptionButtonTxt: 'Continue',
-                          onPressed: () async {
-                            if (ForgetPasswordControllers
-                                    .forgetPassFormKey.currentState!
-                                    .validate() &&
-                                ForgetPasswordControllers
-                                    .email.text.isNotEmpty) {
-                              await BlocProvider.of<ForgetPassCubit>(context)
-                                  .sendEmail();
-                              return showBottomSheet(
-                                  context: context,
-                                  builder: (context) {
-                                    return const SendCodeShowModalBottomSheet();
-                                  });
-                            }
-                          },
-                        ),
-                ],
+          child: Container(
+            padding: const EdgeInsets.all(20),
+            decoration: backgroundBoxDecorationImg(),
+            child: SafeArea(
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    const CustomAppBar(),
+                    const CustomOrangeCarrotImg(
+                      mediaSize: .15,
+                    ),
+                    const SizedBox(
+                      height: 15,
+                    ),
+                    const TextSectionForgetPasswordView(),
+                    CustomTextField(
+                      textEditingController: ForgetPasswordControllers.email,
+                      validate: emailValidateMethod,
+                    ),
+                    const SizedBox(
+                      height: 35,
+                    ),
+                    state is ForgetPassLoadingState
+                        ? const Center(
+                            child: CircularProgressIndicator(),
+                          )
+                        : CustomButton(
+                            descriptionButtonTxt: 'Continue',
+                            onPressed: () async {
+                              if (ForgetPasswordControllers
+                                      .forgetPassFormKey.currentState!
+                                      .validate() &&
+                                  ForgetPasswordControllers
+                                      .email.text.isNotEmpty) {
+                                await BlocProvider.of<ForgetPassCubit>(context)
+                                    .sendEmail();
+                                return showBottomSheet(
+                                    context: context,
+                                    builder: (context) {
+                                      return const SendCodeShowModalBottomSheet();
+                                    });
+                              }
+                            },
+                          ),
+                  ],
+                ),
               ),
             ),
           ),

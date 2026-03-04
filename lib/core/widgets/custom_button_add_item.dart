@@ -8,11 +8,13 @@ class CustomButtonAddItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.sizeOf(context).width < 360 ? 40.0 : 46.0;
+
     return Container(
-      height: 50,
-      width: 50,
+      height: size,
+      width: size,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(14),
         color: commonColor,
       ),
       child: TextButton(

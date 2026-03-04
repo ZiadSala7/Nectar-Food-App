@@ -18,12 +18,16 @@ class PersonalDataAccountListTile extends StatelessWidget {
       ),
       title: Row(
         children: [
-          Text(
-            'Ziad Salah',
-            style: Styles.textStyle20.copyWith(color: Colors.black),
+          Expanded(
+            child: Text(
+              'Ziad Salah',
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              style: Styles.textStyle20.copyWith(color: Colors.black),
+            ),
           ),
           const SizedBox(
-            width: 10,
+            width: 6,
           ),
           GestureDetector(
             onTap: () {},
@@ -37,6 +41,8 @@ class PersonalDataAccountListTile extends StatelessWidget {
       ),
       subtitle: Text(
         'zslah1935@gmail.com',
+        maxLines: 1,
+        overflow: TextOverflow.ellipsis,
         style: Styles.textStyle16.copyWith(
           color: greyColor,
           fontWeight: FontWeight.w500,

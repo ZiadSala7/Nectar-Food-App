@@ -23,8 +23,6 @@ class KindOfProductCard extends StatelessWidget {
         GoRouter.of(context).push(AppRouters.dislayProducts);
       },
       child: Container(
-        height: 180,
-        width: 180,
         decoration: BoxDecoration(
           color: color,
           border: Border.all(
@@ -38,15 +36,18 @@ class KindOfProductCard extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Image.asset(
-              img,
-              width: 111,
-              height: 75,
+            Flexible(
+              child: Image.asset(
+                img,
+                width: 100,
+                height: 70,
+              ),
             ),
             Text(
               kindName,
               textAlign: TextAlign.center,
               maxLines: 2,
+              overflow: TextOverflow.ellipsis,
               style: Styles.textStyle20.copyWith(color: Colors.black),
             )
           ],

@@ -9,30 +9,26 @@ class MyCartListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: 170,
-      height: 130,
-      child: ListTile(
-        title: Text(
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
           'Fresh Apples',
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
           style: Styles.textStyle20.copyWith(
             color: Colors.black,
           ),
         ),
-        subtitle: const Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              '1Kg, Price',
-              style: Styles.textStyle14,
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            CustomCartProductNum(),
-          ],
+        const SizedBox(height: 4),
+        const Text(
+          '1Kg, Price',
+          style: Styles.textStyle14,
         ),
-      ),
+        const SizedBox(height: 10),
+        const CustomCartProductNum(),
+      ],
     );
   }
 }

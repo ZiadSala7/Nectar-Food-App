@@ -13,37 +13,41 @@ class MyCartItem extends StatelessWidget {
     return Column(
       children: [
         SizedBox(
-          height: 130,
+          height: 120,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Image.asset(
-                AppImages.apple,
-                width: 125,
-                height: 65,
+              const SizedBox(width: 8),
+              SizedBox(
+                width: 84,
+                child: Image.asset(
+                  AppImages.apple,
+                  fit: BoxFit.contain,
+                ),
               ),
-              const MyCartListTile(),
               const SizedBox(
-                width: 40,
+                width: 10,
+              ),
+              const Expanded(
+                child: MyCartListTile(),
               ),
               Column(
-                mainAxisAlignment: MainAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   IconButton(
                     onPressed: () {},
                     icon: const Icon(Icons.close),
-                  ),
-                  const SizedBox(
-                    height: 40,
                   ),
                   Text(
                     r'$4.99',
                     style: Styles.textStyle20.copyWith(
                       color: Colors.black,
                     ),
-                  )
+                  ),
                 ],
               ),
+              const SizedBox(width: 6),
             ],
           ),
         ),

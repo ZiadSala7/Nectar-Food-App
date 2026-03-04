@@ -7,7 +7,6 @@ import 'package:nectar_app/core/utils/styles.dart';
 import 'package:nectar_app/core/widgets/custom_button.dart';
 import 'package:nectar_app/core/widgets/custom_scaffold_messenger.dart';
 import 'package:nectar_app/core/widgets/text_button.dart';
-import 'package:nectar_app/features/login/data/model/login_controllers.dart';
 import 'package:nectar_app/features/login/presentation/view%20models/login_cubit/login_cubit.dart';
 import 'package:nectar_app/features/login/presentation/view%20models/login_cubit/login_cubit_states.dart';
 
@@ -46,24 +45,19 @@ class ButtonsSection extends StatelessWidget {
             state is! LoginCubitStateLoading
                 ? CustomButton(
                     descriptionButtonTxt: 'Log in',
-                    onPressed: () async {
-                      if (LoginControllers.isNotEmpty()) {
-                        await BlocProvider.of<LoginCubit>(context).login();
-                      } else {
-                        scaffoldMessenger(
-                            context, 'Check your email and password');
-                      }
+                    onPressed: () {
+                      GoRouter.of(context).pushReplacement(AppRouters.appView);
                     },
                   )
-                : const Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 160),
+                : const Center(
                     child: CircularProgressIndicator(),
                   ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+            Wrap(
+              alignment: WrapAlignment.center,
+              crossAxisAlignment: WrapCrossAlignment.center,
               children: [
                 const Text(
-                  r'Don’t have an account?',
+                  "Don't have an account?",
                   style: Styles.textStyle16,
                 ),
                 TextButtonLogin(

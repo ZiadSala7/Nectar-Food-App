@@ -11,28 +11,34 @@ class CustomSearchFieldButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.sizeOf(context).width < 360 ? 52.0 : 58.0;
+
     return GestureDetector(
       onTap: () {
         GoRouter.of(context).push(AppRouters.searchView);
       },
       child: Container(
-        margin: const EdgeInsets.symmetric(vertical: 20),
-        padding: const EdgeInsets.symmetric(horizontal: 10),
-        height: 60,
+        margin: const EdgeInsets.symmetric(vertical: 16),
+        padding: const EdgeInsets.symmetric(horizontal: 12),
+        height: height,
         width: double.infinity,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15),
           color: backgroundColor,
         ),
-        child: const Row(
+        child: Row(
           children: [
-            Icon(Icons.search),
-            SizedBox(
+            const Icon(Icons.search),
+            const SizedBox(
               width: 10,
             ),
-            Text(
-              'Search Store',
-              style: Styles.textStyle18,
+            Expanded(
+              child: Text(
+                'Search Store',
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: Styles.textStyle18,
+              ),
             ),
           ],
         ),

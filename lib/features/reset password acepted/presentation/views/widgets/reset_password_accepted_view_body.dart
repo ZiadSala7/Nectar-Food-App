@@ -9,48 +9,54 @@ class ResetPasswordAcceptedViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.sizeOf(context);
+
     return GestureDetector(
       onTap: () {
         GoRouter.of(context).pushReplacement(AppRouters.loginView);
       },
-      child: SizedBox(
-        height: MediaQuery.of(context).size.height,
-        width: MediaQuery.of(context).size.width,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.12,
+      child: SafeArea(
+        child: SizedBox(
+          height: size.height,
+          width: size.width,
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                SizedBox(
+                  height: size.height * 0.1,
+                ),
+                SizedBox(
+                  height: size.height * 0.28,
+                  width: size.width * 0.5,
+                  child: const Image(
+                    image: AssetImage(AppImages.congratulationImg),
+                  ),
+                ),
+                const SizedBox(
+                  height: 15,
+                ),
+                Text(
+                  'Congratulations',
+                  textAlign: TextAlign.center,
+                  style: Styles.textStyle50
+                      .copyWith(color: Colors.black, fontSize: 34),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Text(
+                  'Your changed password is successful.\nWelcome to our app.',
+                  textAlign: TextAlign.center,
+                  style: Styles.textStyle14.copyWith(
+                    color: Colors.black,
+                    fontWeight: FontWeight.normal,
+                  ),
+                ),
+              ],
             ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.3,
-              width: MediaQuery.of(context).size.width / 2,
-              child: const Image(
-                image: AssetImage(AppImages.congratulationImg),
-              ),
-            ),
-            const SizedBox(
-              height: 15,
-            ),
-            Text(
-              'Congratulations',
-              textAlign: TextAlign.center,
-              style: Styles.textStyle50
-                  .copyWith(color: Colors.black, fontSize: 40),
-            ),
-            const SizedBox(
-              height: 30,
-            ),
-            Text(
-              'Your change Password Is Success\nWelcome to our app',
-              textAlign: TextAlign.center,
-              style: Styles.textStyle14.copyWith(
-                color: Colors.black,
-                fontWeight: FontWeight.normal,
-              ),
-            ),
-          ],
+          ),
         ),
       ),
     );

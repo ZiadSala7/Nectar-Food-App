@@ -14,9 +14,8 @@ class ProductDetailsView extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          SizedBox(
-            height: MediaQuery.of(context).size.height * 0.8,
-            child: const SingleChildScrollView(
+          const Expanded(
+            child: SingleChildScrollView(
               child: Column(
                 children: [
                   ProductImageCard(),
@@ -27,9 +26,12 @@ class ProductDetailsView extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15),
-            child: CustomButton(
-              descriptionButtonTxt: 'Add to basket',
-              onPressed: () {},
+            child: SafeArea(
+              top: false,
+              child: CustomButton(
+                descriptionButtonTxt: 'Add to basket',
+                onPressed: () {},
+              ),
             ),
           ),
         ],

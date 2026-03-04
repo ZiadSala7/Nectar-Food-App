@@ -8,7 +8,7 @@ class CustomFavouriteItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 105,
+      height: 110,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -16,28 +16,44 @@ class CustomFavouriteItem extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              SizedBox(
-                width: 300,
-                height: 80,
-                child: ListTile(
-                  leading: Image.asset(
-                    AppImages.apple,
-                    width: 100,
-                  ),
-                  title: Text(
-                    'Fresh Apples',
-                    style: Styles.textStyle16.copyWith(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
+              Expanded(
+                child: Row(
+                  children: [
+                    SizedBox(
+                      width: 70,
+                      child: Image.asset(
+                        AppImages.apple,
+                        fit: BoxFit.contain,
+                      ),
                     ),
-                  ),
-                  subtitle: const Text(
-                    '1Kg, Price',
-                    style: Styles.textStyle14,
-                  ),
+                    const SizedBox(width: 10),
+                    Expanded(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Fresh Apples',
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                            style: Styles.textStyle16.copyWith(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          const SizedBox(height: 4),
+                          const Text(
+                            '1Kg, Price',
+                            style: Styles.textStyle14,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
               ),
               Row(
+                mainAxisSize: MainAxisSize.min,
                 children: [
                   Text(
                     r'$4.99',

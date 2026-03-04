@@ -19,6 +19,8 @@ class _HomeViewState extends State<HomeView> {
         headerSliverBuilder: (context, innerBoxIsScrolled) {
           return [
             SliverAppBar(
+              scrolledUnderElevation: 0,
+              backgroundColor: Colors.white,
               automaticallyImplyLeading: false,
               title: Image.asset(
                 AppImages.orangeCarrot,

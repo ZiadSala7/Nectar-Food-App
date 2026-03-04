@@ -12,45 +12,50 @@ class OnBoardingViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.sizeOf(context);
+
     return Container(
-      height: MediaQuery.of(context).size.height,
-      width: MediaQuery.of(context).size.width,
+      height: size.height,
+      width: size.width,
       decoration: const BoxDecoration(
         image: DecorationImage(
           image: AssetImage(AppImages.onBoarding),
           fit: BoxFit.fitWidth,
         ),
       ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          Image.asset(AppImages.whiteCarrot),
-          const SizedBox(
-            height: 20,
-          ),
-          Text(
-            'Welcome \nto our store',
-            textAlign: TextAlign.center,
-            style: Styles.textStyle50.copyWith(
-              fontFamily: playwriteNGModern,
-              color: Colors.white,
+      child: SafeArea(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            Image.asset(AppImages.whiteCarrot),
+            const SizedBox(
+              height: 16,
             ),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          CustomButton(
-            descriptionButtonTxt: 'Get Started',
-            onPressed: () async {
-              final prefs = await SharedPreferences.getInstance();
-              prefs.setBool('onboarding', true);
-              GoRouter.of(context).push(AppRouters.loginView);
-            },
-          ),
-          SizedBox(
-            height: MediaQuery.of(context).size.height * 0.1,
-          ),
-        ],
+            Text(
+              'Welcome \nto our store',
+              textAlign: TextAlign.center,
+              style: Styles.textStyle50.copyWith(
+                fontFamily: playwriteNGModern,
+                color: Colors.white,
+                fontSize: size.width < 360 ? 38 : 46,
+              ),
+            ),
+            const SizedBox(
+              height: 16,
+            ),
+            CustomButton(
+              descriptionButtonTxt: 'Get Started',
+              onPressed: () async {
+                final prefs = await SharedPreferences.getInstance();
+                prefs.setBool('onboarding', true);
+                GoRouter.of(context).push(AppRouters.loginView);
+              },
+            ),
+            SizedBox(
+              height: size.height * 0.08,
+            ),
+          ],
+        ),
       ),
     );
   }

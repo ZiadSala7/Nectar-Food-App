@@ -8,39 +8,41 @@ class CustomGroceriesSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 450,
-      child: Column(
-        children: [
-          Container(
+    final cardWidth = MediaQuery.sizeOf(context).width * 0.42;
+
+    return Column(
+      children: [
+        SizedBox(
+          height: 110,
+          width: double.infinity,
+          child: ListView.builder(
             padding: const EdgeInsets.all(10),
-            height: 120,
-            width: double.infinity,
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              itemCount: 6,
-              itemBuilder: (context, index) => const CustomGroceryItem(
-                img: '',
-                txt: '',
-                color: commonColor,
-              ),
+            scrollDirection: Axis.horizontal,
+            itemCount: 6,
+            itemBuilder: (context, index) => const CustomGroceryItem(
+              img: '',
+              txt: '',
+              color: commonColor,
             ),
           ),
-          const SizedBox(
-            height: 20,
-          ),
-          Container(
+        ),
+        const SizedBox(
+          height: 16,
+        ),
+        SizedBox(
+          height: 250,
+          width: double.infinity,
+          child: ListView.builder(
             padding: const EdgeInsets.symmetric(horizontal: 5),
-            height: 260,
-            width: double.infinity,
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              itemCount: 6,
-              itemBuilder: (context, index) => const CustomCardItem(),
+            scrollDirection: Axis.horizontal,
+            itemCount: 6,
+            itemBuilder: (context, index) => CustomCardItem(
+              width: cardWidth,
+              margin: const EdgeInsets.only(right: 12),
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

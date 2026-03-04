@@ -35,11 +35,15 @@ class _CustomChosenFilteringItemState extends State<CustomChosenFilteringItem> {
                   color: commonColor,
                 ),
         ),
-        Text(
-          widget.label,
-          style: Styles.textStyle16.copyWith(
-            color: isClicked ? commonColor : Colors.black,
-            fontWeight: FontWeight.w500,
+        Expanded(
+          child: Text(
+            widget.label,
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
+            style: Styles.textStyle16.copyWith(
+              color: isClicked ? commonColor : Colors.black,
+              fontWeight: FontWeight.w500,
+            ),
           ),
         ),
       ],

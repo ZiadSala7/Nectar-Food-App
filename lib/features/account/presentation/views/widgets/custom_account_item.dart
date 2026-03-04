@@ -15,7 +15,6 @@ class CustomAccountItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Row(
           children: [
@@ -26,12 +25,18 @@ class CustomAccountItem extends StatelessWidget {
             const SizedBox(
               width: 15,
             ),
-            Text(
-              title,
-              style: Styles.textStyle18.copyWith(color: Colors.black),
+            SizedBox(
+              width: MediaQuery.sizeOf(context).width * 0.58,
+              child: Text(
+                title,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: Styles.textStyle18.copyWith(color: Colors.black),
+              ),
             ),
           ],
         ),
+        const Spacer(),
         IconButton(
           onPressed: onPressed,
           icon: const Icon(

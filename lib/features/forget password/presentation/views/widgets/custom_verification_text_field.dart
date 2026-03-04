@@ -9,37 +9,38 @@ class CustomVerificationTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 50,
-      width: 50,
-      decoration: BoxDecoration(
-        color: commonColor,
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: TextField(
-        controller: controller,
-        cursorColor: Colors.white,
-        style: Styles.textStyle16.copyWith(
-          color: Colors.white,
+    return AspectRatio(
+      aspectRatio: 1,
+      child: Container(
+        decoration: BoxDecoration(
+          color: commonColor,
+          borderRadius: BorderRadius.circular(10),
         ),
-        onChanged: (value) {
-          value.length == 1
-              ? FocusScope.of(context).nextFocus()
-              : FocusScope.of(context).previousFocus();
-        },
-        decoration: InputDecoration(
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10),
+        child: TextField(
+          controller: controller,
+          cursorColor: Colors.white,
+          style: Styles.textStyle16.copyWith(
+            color: Colors.white,
           ),
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10),
+          onChanged: (value) {
+            value.length == 1
+                ? FocusScope.of(context).nextFocus()
+                : FocusScope.of(context).previousFocus();
+          },
+          decoration: InputDecoration(
+            focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(10),
+            ),
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(10),
+            ),
           ),
+          textAlign: TextAlign.center,
+          inputFormatters: [
+            LengthLimitingTextInputFormatter(1),
+            FilteringTextInputFormatter.digitsOnly,
+          ],
         ),
-        textAlign: TextAlign.center,
-        inputFormatters: [
-          LengthLimitingTextInputFormatter(1),
-          FilteringTextInputFormatter.digitsOnly,
-        ],
       ),
     );
   }

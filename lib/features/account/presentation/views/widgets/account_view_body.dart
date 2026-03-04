@@ -8,14 +8,19 @@ class AccountViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      children: [
-        SizedBox(height: 60),
-        PersonalDataAccountListTile(),
-        SizedBox(height: 20),
-        AccountDataItems(),
-        CustomLogOutButton(),
-      ],
+    return SafeArea(
+      child: SingleChildScrollView(
+        child: Column(
+          children: const [
+            SizedBox(height: 30),
+            PersonalDataAccountListTile(),
+            SizedBox(height: 12),
+            AccountDataItems(),
+            CustomLogOutButton(),
+            SizedBox(height: 16),
+          ],
+        ),
+      ),
     );
   }
 }

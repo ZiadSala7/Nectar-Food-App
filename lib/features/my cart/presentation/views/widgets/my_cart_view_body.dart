@@ -9,23 +9,21 @@ class MyCartViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          SizedBox(
-            height: MediaQuery.of(context).size.height * 0.75,
-            child: Expanded(
-              child: ListView.builder(
-                itemCount: 10,
-                itemBuilder: (context, index) {
-                  return const MyCartItem();
-                },
-              ),
-            ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Expanded(
+          child: ListView.builder(
+            itemCount: 10,
+            itemBuilder: (context, index) {
+              return const MyCartItem();
+            },
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15),
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 15),
+          child: SafeArea(
+            top: false,
             child: CustomMyCartButton(
               descriptionButtonTxt: 'Go to Checkout',
               onPressed: () {
@@ -33,8 +31,8 @@ class MyCartViewBody extends StatelessWidget {
               },
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

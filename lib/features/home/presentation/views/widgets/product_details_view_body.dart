@@ -19,10 +19,14 @@ class ProductDetailsViewBody extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                'Fresh Apples',
-                style: Styles.textStyle30.copyWith(
-                  fontFamily: alef,
+              Expanded(
+                child: Text(
+                  'Fresh Apples',
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: Styles.textStyle30.copyWith(
+                    fontFamily: alef,
+                  ),
                 ),
               ),
               IconButton(
